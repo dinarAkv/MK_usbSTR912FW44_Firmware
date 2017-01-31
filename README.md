@@ -8,7 +8,7 @@ Firmware programmed on the base of example rendered by STMicroelectronics.
 
 When user from host through terminal send message (sequence of bytes,
 for example: 0xFF 0xFE 0xFD) to device (STR912FW44). After device received message it callback this message
-to the host. So user get the same message.
+to the host. So user get the same message in the host terminal.
 
 
 
