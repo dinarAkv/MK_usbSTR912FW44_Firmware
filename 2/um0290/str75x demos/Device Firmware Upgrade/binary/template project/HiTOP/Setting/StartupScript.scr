@@ -1,0 +1,6 @@
+// reset ARM processor
+Reset Target
+
+// set Programcounter
+//REGISTER pc = 0 
+//REGISTER cpsr = 0x000000D3

@@ -1,0 +1,46 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.s*; *.src; *.a*)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt; *.h; *.inc)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Project), 0x0004 // Tools: 'ARM-ADS'
+GRPOPT 1,(RVMDK),1,0,0
+GRPOPT 2,(FWLib),0,0,0
+GRPOPT 3,(User),0,0,0
+
+OPTFFF 1,1,2,2,0,29,39,0,<.\75x_init.s><75x_init.s> { 44,0,0,0,2,0,0,0,3,0,0,0,255,255,255,255,255,255,255,255,252,255,255,255,226,255,255,255,0,0,0,0,0,0,0,0,248,2,0,0,93,1,0,0 }
+OPTFFF 1,2,2,0,0,0,0,0,<.\75x_vect.s><75x_vect.s> 
+OPTFFF 2,3,1,0,0,0,0,0,<..\..\..\..\..\FWLib\str75x\src\75x_mrcc.c><75x_mrcc.c> 
+OPTFFF 2,4,1,0,0,0,0,0,<..\..\..\..\..\FWLib\str75x\src\75x_eic.c><75x_eic.c> 
+OPTFFF 2,5,1,0,0,0,0,0,<..\..\..\..\..\FWLib\str75x\src\75x_extit.c><75x_extit.c> 
+OPTFFF 2,6,1,0,0,0,0,0,<..\..\..\..\..\FWLib\str75x\src\75x_gpio.c><75x_gpio.c> 
+OPTFFF 2,7,1,0,0,0,0,0,<..\..\..\..\..\FWLib\str75x\src\75x_lib.c><75x_lib.c> 
+OPTFFF 3,8,1,0,0,0,0,0,<..\..\75x_it.c><75x_it.c> 
+OPTFFF 3,9,1,0,0,0,0,0,<..\..\main.c><main.c> 
+
+
+TARGOPT 1, (Project)
+ ADSCLK=4000000
+  OPTTT 1,1,1,0
+  OPTHX 1,65535,0,0,0
+  OPTLX 79,66,8,<.\Lst\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTAX 255
+  OPTDL (SARM.DLL)(-cSTR75x)(DARMST.DLL)(-pSTR752)(SARM.DLL)(-cSTR75x)(TARMST.DLL)(-pSTR752)
+  OPTDBG 48126,0,()()()()()()()()()() (BIN\UL2ARM.DLL)()()()
+  OPTKEY 0,(UL2ARM)(-UU0639C7E -O15 -S1 -C0 -N00("ARM7TDMI-S Core") -D00(4F1F0041) -L00(4) -FO7 -FD40000000 -FC800 -FN2 -FF0STR75X_B0_128 -FS020000000 -FL020000 -FF1STR75X_B1 -FS1200C0000 -FL14000)
+  OPTDF 0x2
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

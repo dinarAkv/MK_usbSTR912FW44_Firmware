@@ -1,0 +1,92 @@
+/******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+* File Name          : version.txt
+* Author             : MCD Application Team
+* Version            : V2.0.0
+* Date               : 09/29/2008
+* Description        : Version file for STR7/9 USB Developer kit.
+*                      The enclosed firmware and all the related documentation
+*                      are not covered by a License Agreement, if you need such
+*                      License you can contact your local STMicroelectronics
+*                      office.
+********************************************************************************
+* THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+* WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+* AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+* INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+* CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+* INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+*******************************************************************************/
+
+* V2.0.0 - 09/29/2008
+=====================
+
+General
+*******
+   + Update the kit with the with STR71x Firmaware library V4.0 and the STR91x 
+     Firmware library V 2.0.
+   + Add the Support of RIDE and HiTOP toolchains.
+   + Replace the RVDK by Keil toolchain.
+
+< USB library >
+***************
+   + Correct the bug of control transfer when the data to transfer is an exact 
+     multiple of wMaxPacketSize for the endpoint. In this case the device should
+     return a zero-length packet to indicate the end of the Data stage. 
+     For more details regarding this condition please refer to the section 
+     8.5.3.2 of the USB 2.0 specification.
+          
+     The functions DataStageIn() and Data_Setup0() in the file "usb_core.c" are 
+     modified to support this feature.   
+
+   + Correct the Get Status request (bus/self power feature reporting): function 
+     Standard_GetStatus(u16 Length) in the usb_core.c updated.
+
+   + update the function UserToPMABufferCopy (file usb_mem) to avoid any problem 
+     with non aligned data access.
+
+< USB demos >
+************* 
+   + All demos
+      
+       - first plug bug: in the first plug on a new PC, Windows sends a specific 
+         Get string descriptor (OS descriptor index 0xEE). This descriptor is not 
+         supported by the demos so the function "GetStringDescriptor(u16 Length)"
+         is modified to STALL all Get string descriptor requests with an index 
+         greater than the number of supported string descriptors(file usb_prop.c). 
+         
+       - the infinite loop in the USB initialization is removed to be compliant 
+          with embeded OSs (file usb_prop.c)
+          
+       - update the "bDeviceState" possible values (file usb_pwr.h) to be:
+          - UNCONNECTED
+          - ATTACHED
+          - POWERED
+          - SUSPENDED
+          - ADDRESSED
+          - CONFIGURED
+          
+         The "bDeviceState" is updated according to the device state in the files 
+         usb_prop.c and hw_config.c
+         
+       - current feature initialization: the field "pInformation->Current_Feature" 
+        is initialized on each USB reset (file usb_prop.c).        
+      
+       - update all device and configuration descriptors to be USB 2.0 complient.  
+       
+              
+   + Add a CUSTOM_HID demo with PC applet (source code porvided) to give an 
+   example of how to create a customized HID device based on windows native 
+   driver.
+
+
+   + Device_Firmware_Upgrade demo
+      - Add example with preconfigured projects for RVMDK, EWARMv5, RIDE and 
+        HiTOP toolchain to demonstrate how to create a binary image to be loaded
+        with the DFU 
+  
+* V1.0 - 10/01/2006
+====================
+  Created.
+
+
+******************* (C) COPYRIGHT 2008 STMicroelectronics *****END OF FILE******

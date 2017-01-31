@@ -1,0 +1,4 @@
+
+<Project Header="Project 'Audio speaker (DMA Linked Mode)'" Path=".\Audio speaker (DMA Linked Mode).rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="Audio speaker (DMA Linked Mode)" >
+	<ApplicationBuild Header="Audio speaker (DMA Linked Mode)" Extern=".\Audio speaker (DMA Linked Mode).rapp" Path=".\Audio speaker (DMA Linked Mode).rapp" OutputFile=".\obj\Audio speaker (DMA Linked Mode).elf" sate="98" ></ApplicationBuild>
+</Project>

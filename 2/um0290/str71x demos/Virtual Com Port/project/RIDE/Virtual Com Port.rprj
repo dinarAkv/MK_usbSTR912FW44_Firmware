@@ -1,0 +1,4 @@
+
+<Project Header="Project 'Virtual Com Port'" Path=".\Virtual Com Port.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="Virtual Com Port" >
+	<ApplicationBuild Header="Virtual Com Port" Extern=".\Virtual Com Port.rapp" Path=".\Virtual Com Port.rapp" OutputFile=".\obj\Virtual Com Port.elf" sate="98" ></ApplicationBuild>
+</Project>

@@ -1,0 +1,12 @@
+.\Obj\usb_endp.o: ..\..\source\usb_endp.c
+.\Obj\usb_endp.o: ..\..\..\..\USBLib\inc\usb_lib.h
+.\Obj\usb_endp.o: ..\..\..\..\USBLib\inc\usb_type.h
+.\Obj\usb_endp.o: ..\..\include\usb_conf.h
+.\Obj\usb_endp.o: ..\..\..\..\USBLib\inc\usb_regs.h
+.\Obj\usb_endp.o: ..\..\..\..\USBLib\inc\usb_def.h
+.\Obj\usb_endp.o: ..\..\..\..\USBLib\inc\usb_core.h
+.\Obj\usb_endp.o: ..\..\..\..\USBLib\inc\usb_init.h
+.\Obj\usb_endp.o: ..\..\..\..\USBLib\inc\usb_mem.h
+.\Obj\usb_endp.o: ..\..\..\..\USBLib\inc\usb_int.h
+.\Obj\usb_endp.o: ..\..\include\usb_desc.h
+.\Obj\usb_endp.o: ..\..\include\hw_config.h

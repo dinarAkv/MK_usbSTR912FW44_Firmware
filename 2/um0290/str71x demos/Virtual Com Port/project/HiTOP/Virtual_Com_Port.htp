@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<HiTOPProject>
+	<Version>V5.20</Version>
+	<DebugDevice>
+		<TargetProcessor Id="PARM"/>
+		<Derivative Id="STR71X" File="$(SYSTEMDIR)\Derivatives\ST Microelectronics\.\..\Arm\Default.drv" Vendor="ST Microelectronics" DerivDir="."/>
+		<Communication>
+			<Port>USB</Port>
+			<DeviceName>Tantino-10083</DeviceName>
+			<PortAddress Value="-2147483648"/>
+			<BaudRate Value="0"/>
+		</Communication>
+		<SystemDir Path="C:\Program Files\Hitex\HiTOP53-ARM\TantinoARM7-9"/>TantinoARM7_9
+		<ARMConfiguration Id="STR71X" SWJDP="0" Vendor="ST Microelectronics" EMB_ICE="2" Endianes="0" ProcType="4" ETM_EXIST="1" RTCK_USED="1" Exceptions="ARM low vectors" INTctl_Base="0xFFFFF800" INT_controller="ST-Micro EIC" CountDevicesInChain="1"/>
+	</DebugDevice>
+	<Windows>
+		<Window Id="SFRWindow">
+			<SFRDefinitions File="$(SYSTEMDIR)\Derivatives\ST Microelectronics\STR71X.xsfr"/>
+			<WindowState State="Normal"/>
+		</Window>
+		<Window Id="Disassembly">
+			<List Id="" BkColor="16777215" TextColor="0" DisableColSizing="0">
+				<Header Bold="1"/>
+				<Column Id="0" Order="0" Title="State" Width="24" Visible="1" Alignment="LEFT"/>
+				<Column Id="11" Order="1" Title="Address" Visible="1" RelWidth="0.1722088" Alignment="LEFT"/>
+				<Column Id="12" Order="2" Title="OpCode" Visible="1" RelWidth="0.1324738" Alignment="LEFT"/>
+				<Column Id="13" Order="3" Title="Instruction" Visible="1" RelWidth="0.6953878" Alignment="LEFT"/>
+			</List>
+			<Tabs Count="0"/>
+		</Window>
+		<Window Id="Source">
+			<Tabs Count="2" Active="1">
+				<Tab Pos="0" Module="main" TopLine="1" FilePath="C:\VSS\STR\USB Package\FIRMWARE\str71x demos\Virtual Com Port\source\main.c" Application="Virtual_Com_Port"/>
+				<Tab Pos="1" Module="cstart" TopLine="1" FilePath="C:\VSS\STR\USB Package\FIRMWARE\str71x demos\Virtual Com Port\project\HiTOP\Src\cstart.asm" Application="Virtual_Com_Port"/>
+			</Tabs>
+			<UpdateOnRunning Update="0"/>
+			<WindowState State="Maximized"></WindowState>
+			<Rectangle State="Minimized">
+				<Size cx="160" cy="24"></Size>
+				<Position x="0" y="352"></Position>
+			</Rectangle>
+			<Rectangle State="Normal">
+				<Size cx="534" cy="471"></Size>
+				<Position x="-4" y="-23"></Position>
+			</Rectangle>
+			<Rectangle State="Maximized">
+				<Size cx="851" cy="594"></Size>
+				<Position x="-4" y="-30"></Position>
+			</Rectangle>
+		</Window>
+		<MDIState RTOS="0" Trace="0" Source="1" Maximized="1" SFRWindow="0" CoverageWindow="0"/>
+		<Window Id="Emulator State">
+			<Tabs>
+				<Tab Pos="0">
+					<List Id="" BkColor="16777215" SortAsc="1" SortCol="-1" TextColor="0" DisableColSizing="0">
+						<Header Bold="1"/>
+						<Column Id="10" Order="0" Title="No" Visible="1" RelWidth="0.1250058" Alignment="LEFT"/>
+						<Column Id="11" Order="1" Title="Id" Visible="1" RelWidth="0.2500058" Alignment="LEFT"/>
+						<Column Id="12" Order="2" Title="Counter" Visible="1" RelWidth="0.2500058" Alignment="LEFT"/>
+						<Column Id="13" Order="3" Title="Use" Visible="1" RelWidth="0.2500058" Alignment="LEFT"/>
+						<Column Id="14" Order="4" Title="Occured" Visible="1" RelWidth="0.1250058" Alignment="LEFT"/>
+					</List>
+				</Tab>
+				<Tab Pos="1">
+					<List Id="" BkColor="16777215" SortAsc="1" SortCol="-1" TextColor="0" DisableColSizing="0">
+						<Header Bold="1"/>
+						<Column Id="10" Order="0" Title="No" Visible="1" RelWidth="0.1250008" Alignment="LEFT"/>
+						<Column Id="11" Order="1" Title="Id" Visible="1" RelWidth="0.2500008" Alignment="LEFT"/>
+						<Column Id="12" Order="2" Title="Counter" Visible="1" RelWidth="0.2500008" Alignment="LEFT"/>
+						<Column Id="13" Order="3" Title="Use" Visible="1" RelWidth="0.2500008" Alignment="LEFT"/>
+						<Column Id="14" Order="4" Title="Occured" Visible="1" RelWidth="0.1250008" Alignment="LEFT"/>
+					</List>
+				</Tab>
+				<Tab Pos="2">
+					<List Id="" BkColor="16777215" SortAsc="1" SortCol="-1" TextColor="0" DisableColSizing="0">
+						<Header Bold="1"/>
+						<Column Id="10" Order="0" Title="No" Visible="1" RelWidth="0.1250008" Alignment="LEFT"/>
+						<Column Id="11" Order="1" Title="Id" Visible="1" RelWidth="0.2500008" Alignment="LEFT"/>
+						<Column Id="12" Order="2" Title="Counter" Visible="1" RelWidth="0.2500008" Alignment="LEFT"/>
+						<Column Id="13" Order="3" Title="Use" Visible="1" RelWidth="0.2500008" Alignment="LEFT"/>
+						<Column Id="14" Order="4" Title="Occured" Visible="1" RelWidth="0.1250008" Alignment="LEFT"/>
+					</List>
+				</Tab>
+				<Tab Pos="21">
+					<List Id="" BkColor="16777215" SortAsc="1" SortCol="-1" TextColor="0" DisableColSizing="0">
+						<Header Bold="1"/>
+						<Column Id="10" Order="0" Title="No" Visible="1" RelWidth="0.1250008" Alignment="LEFT"/>
+						<Column Id="11" Order="1" Title="Id" Visible="1" RelWidth="0.2500008" Alignment="LEFT"/>
+						<Column Id="12" Order="2" Title="Counter" Visible="1" RelWidth="0.2500008" Alignment="LEFT"/>
+						<Column Id="13" Order="3" Title="Use" Visible="1" RelWidth="0.2500008" Alignment="LEFT"/>
+						<Column Id="14" Order="4" Title="Occured" Visible="1" RelWidth="0.1250008" Alignment="LEFT"/>
+					</List>
+				</Tab>
+			</Tabs>
+		</Window>
+		<Window Id="Watch">
+			<Tabs Sel="0" Count="2">
+				<Tab Pos="0" Title="Locals">
+					<UpdateOnRunning Update="0"/>
+					<List Id="" BkColor="16777215" SortAsc="1" SortCol="-1" TextColor="0" DisableColSizing="0">
+						<Header Bold="1"/>
+						<Column Id="12" Order="0" Title="Variables" Visible="1" RelWidth="0.3893178" Alignment="LEFT"/>
+						<Column Id="13" Order="1" Title="Value" Visible="1" RelWidth="0.6106918" Alignment="LEFT"/>
+					</List>
+					<DisplayMode Mode="0"/>
+				</Tab>
+				<Tab Pos="1" Title="Watch1">
+					<UpdateOnRunning Update="0"/>
+					<List Id="" BkColor="16777215" SortAsc="1" SortCol="-1" TextColor="0" DisableColSizing="0">
+						<Header Bold="1"/>
+						<Column Id="11" Order="0" Title="ID" Visible="1" RelWidth="0.0642878" Alignment="LEFT"/>
+						<Column Id="12" Order="1" Title="Expression" Visible="1" RelWidth="0.3642878" Alignment="LEFT"/>
+						<Column Id="13" Order="2" Title="Value" Visible="1" RelWidth="0.5714308" Alignment="LEFT"/>
+						<Watches/>
+					</List>
+					<DisplayMode Mode="0"/>
+				</Tab>
+			</Tabs>
+		</Window>
+		<Window Id="Memory">
+			<Tabs Sel="0" Count="1">
+				<Tab Pos="0" Title="Mem0">
+					<UpdateOnRunning Update="0"/>
+					<List Id="" BkColor="16777215" TextColor="0" DisableColSizing="0">
+						<Memory Format="BYTE" SymbolicAddresses="1">
+							<Address Hex="0x00000000" Symbol="0x00000000"/>
+						</Memory>
+						<Header Bold="1"/>
+						<Column Id="11" Order="0" Title="Address" Width="94" Visible="1" Alignment="RIGHT"/>
+						<Column Id="12" Order="1" Title="Data" Width="398" Visible="1" Alignment="LEFT"/>
+						<Column Id="13" Order="2" Title="ASCII" Width="142" Visible="1" Alignment="LEFT"/>
+					</List>
+				</Tab>
+			</Tabs>
+		</Window>
+		<Window Id="TraceFilter">
+			<Tabs>
+				<Tab Pos="0">
+					<Triggers/>
+				</Tab>
+				<Tab Pos="1">
+					<Regions/>
+				</Tab>
+			</Tabs>
+		</Window>
+		<Window Id="Breakpoint">
+			<Tabs Sel="0">
+				<Tab Pos="0" Title="Code">
+					<Breaks/>
+					<List Id="" BkColor="16777215" SortAsc="1" SortCol="-1" TextColor="0" DisableColSizing="0">
+						<Header Bold="1"/>
+						<Column Id="11" Order="0" Title="ID" Visible="1" RelWidth="0.0857168" Alignment="LEFT"/>
+						<Column Id="12" Order="1" Title="Address" Visible="1" RelWidth="0.3904788" Alignment="LEFT"/>
+						<Column Id="13" Order="2" Title="Length" Visible="1" RelWidth="0.1047648" Alignment="LEFT"/>
+						<Column Id="16" Order="3" Title="Type" Visible="1" RelWidth="0.4190508" Alignment="LEFT"/>
+					</List>
+				</Tab>
+				<Tab Pos="1" Title="Data">
+					<Breaks/>
+					<List Id="" BkColor="16777215" SortAsc="1" SortCol="-1" TextColor="0" DisableColSizing="0">
+						<Header Bold="1"/>
+						<Column Id="11" Order="0" Title="ID" Visible="1" RelWidth="0.0857158" Alignment="LEFT"/>
+						<Column Id="12" Order="1" Title="Address" Visible="1" RelWidth="0.3904778" Alignment="LEFT"/>
+						<Column Id="13" Order="2" Title="Length" Visible="1" RelWidth="0.1047638" Alignment="LEFT"/>
+						<Column Id="16" Order="3" Title="Type" Visible="1" RelWidth="0.4190498" Alignment="LEFT"/>
+					</List>
+				</Tab>
+			</Tabs>
+		</Window>
+		<Window Id="FileView" RelativePath="Relative2Project">
+			<ApplFolder Id="Virtual_Com_Port" State="Expanded">
+				<Folder Id="Insert a new folder into the project" State="Not_Expanded" RelativePath=""/>
+				<Folder Id="User" State="Expanded">
+					<File Id="..\..\source\71x_it.c"/>
+					<File Id=".\Src\cstart.asm"/>
+					<File Id="..\..\source\hw_config.c"/>
+					<File Id="..\..\source\main.c"/>
+					<File Id="..\..\source\usb_desc.c"/>
+					<File Id="..\..\source\usb_endp.c"/>
+					<File Id="..\..\source\usb_istr.c"/>
+					<File Id="..\..\source\usb_prop.c"/>
+					<File Id="..\..\source\usb_pwr.c"/>
+				</Folder>
+				<Folder Id="FWLib" State="Expanded">
+					<File Id="..\..\..\..\FWLib\str71x\src\71x_apb.c"/>
+					<File Id="..\..\..\..\FWLib\str71x\src\71x_eic.c"/>
+					<File Id="..\..\..\..\FWLib\str71x\src\71x_gpio.c"/>
+					<File Id="..\..\..\..\FWLib\str71x\src\71x_lib.c"/>
+					<File Id="..\..\..\..\FWLib\str71x\src\71x_rccu.c"/>
+					<File Id="..\..\..\..\FWLib\str71x\src\71x_uart.c"/>
+				</Folder>
+				<Folder Id="USBLib" State="Expanded">
+					<File Id="..\..\..\..\USBLib\src\usb_core.c"/>
+					<File Id="..\..\..\..\USBLib\src\usb_init.c"/>
+					<File Id="..\..\..\..\USBLib\src\usb_int.c"/>
+					<File Id="..\..\..\..\USBLib\src\usb_mem.c"/>
+					<File Id="..\..\..\..\USBLib\src\usb_regs.c"/>
+				</Folder>
+			</ApplFolder>
+		</Window>
+	</Windows>
+	<StartupScript File=".\setting\StartupScript.scr" ProjRelative="1"/>
+	<EditorOptions>
+		<Font lfHeight="-15" lfWeight="400" ColorBack="16777215" ColorText="0" lfQuality="0" lfFaceName="Courier New" lfOutPrecision="0" ColorHiLiteBack="12937777" ColorHiLiteText="16777215" lfClipPrecision="0" lfPitchAndFamily="0"/>
+		<Tabulators Size="4" TabWithSpace="0"/>
+		<Options WideCaret="0" AutoIndent="1" AutoReload="0" HScrollBar="1" VScrollBar="1" LineNumbers="0" VirtualSpace="0" SyntaxColoring="1"/>
+	</EditorOptions>
+	<ConfigurationOptions>
+		<ProcessorSettings>
+			<ProcessorSetting Id="DefMemAc" Value="2" Element="   32bit"/>
+			<ProcessorSetting Id="TClkMode" Value="0" Element="   fixed"/>
+			<ProcessorSetting Id="TAPClk2" Value="6" Element="  6.0MHz"/>
+			<ProcessorSetting Id="TClkWSLo" Value="0" Element="       0"/>
+			<ProcessorSetting Id="TClkWSHi" Value="0" Element="       0"/>
+			<ProcessorSetting Id="TarResLo" Value="2" Element="   210ms"/>
+			<ProcessorSetting Id="TarResHi" Value="0" Element="    50ms"/>
+			<ProcessorSetting Id="TarReTAP" Value="1" Element="     yes"/>
+			<ProcessorSetting Id="TRST" Value="1" Element=""/>
+			<ProcessorSetting Id="DBGRQPin" Value="0" Element=" missing"/>
+			<ProcessorSetting Id="Endianes" Value="0" Element="  little"/>
+			<ProcessorSetting Id="ResetTyp" Value="1" Element="    soft"/>
+			<ProcessorSetting Id="ProcType" Value="4" Element=""/>
+			<ProcessorSetting Id="CacheMod" Value="0" Element="DISABLED"/>
+			<ProcessorSetting Id="CC_Addr" Value="0" Element=""/>
+			<ProcessorSetting Id="SysClock" Value="0" Element=""/>
+			<ProcessorSetting Id="SysClkUn" Value="0" Element="--------"/>
+			<ProcessorSetting Id="TAPClk3" Value="8" Element=" 10.0MHz"/>
+		</ProcessorSettings>
+		<EmulatorSettings>
+			<EmulatorSetting Id="PREFERSW" Value="2" Element="ONLY__HW"/>
+			<EmulatorSetting Id="TRCLEVEL" Value="0" Element="RAW"/>
+			<EmulatorSetting Id="BPBYRUN" Value="0" Element="NOTALLOW"/>
+			<EmulatorSetting Id="BPCONDIT" Value="0" Element="DISABLED"/>
+			<EmulatorSetting Id="BPFLASH" Value="0" Element="DISABLED"/>
+			<EmulatorSetting Id="UPDWRON" Value="0" Element="OFF"/>
+			<EmulatorSetting Id="UPDWRCTI" Value="0" Element=""/>
+			<EmulatorSetting Id="TARRESTA" Value="1" Element="     yes"/>
+			<EmulatorSetting Id="BREAKSTA" Value="1" Element="     yes"/>
+		</EmulatorSettings>
+		<GeneralSettings>
+			<GeneralSetting Id="TraceRecordingMode" Value="0" Element=""/>
+			<GeneralSetting Id="TraceRegionMode" Value="0" Element=""/>
+			<GeneralSetting Id="TraceInitialState" Value="0" Element=""/>
+			<GeneralSetting Id="TraceBufferOnStart" Value="0" Element=""/>
+			<GeneralSetting Id="TraceOnOverflow" Value="0" Element=""/>
+			<GeneralSetting Id="TraceDisplayMode" Value="0" Element=""/>
+			<GeneralSetting Id="TraceBusState" Value="0" Element=""/>
+			<GeneralSetting Id="TriggerBusState" Value="0" Element=""/>
+			<GeneralSetting Id="TriggerDataType" Value="0" Element=""/>
+			<GeneralSetting Id="TriggerCounterMode" Value="0" Element=""/>
+			<GeneralSetting Id="TriggerBreakAction" Value="0" Element=""/>
+			<GeneralSetting Id="TriggerTraceAction" Value="0" Element=""/>
+			<GeneralSetting Id="TriggerRealtimerAction" Value="0" Element=""/>
+			<GeneralSetting Id="TimeTriggerAction" Value="0" Element=""/>
+			<GeneralSetting Id="ProtectionMode" Value="0" Element=""/>
+			<GeneralSetting Id="BankMode" Value="0" Element=""/>
+			<GeneralSetting Id="BankBootBank" Value="0" Element=""/>
+			<GeneralSetting Id="BankLoadBank" Value="0" Element=""/>
+			<GeneralSetting Id="BankCurrBank" Value="0" Element=""/>
+			<GeneralSetting Id="BankIntMode" Value="0" Element=""/>
+		</GeneralSettings>
+	</ConfigurationOptions>
+	<ScreenLayouts Count="1">
+		<Layout Pos="0" Description="Default">
+			<Windows>
+				<MDIState RTOS="0" Trace="0" Source="1" Maximized="1" SFRWindow="0" CoverageWindow="0"/>
+				<Window Id="Source">
+					<WindowState State="Maximized"></WindowState>
+					<Rectangle State="Minimized">
+						<Size cx="160" cy="24"></Size>
+						<Position x="0" y="352"></Position>
+					</Rectangle>
+					<Rectangle State="Normal">
+						<Size cx="534" cy="471"></Size>
+						<Position x="-4" y="-23"></Position>
+					</Rectangle>
+					<Rectangle State="Maximized">
+						<Size cx="851" cy="594"></Size>
+						<Position x="-4" y="-30"></Position>
+					</Rectangle>
+				</Window>
+			</Windows>
+			<Dockinglayout>
+				<Default>
+					<Summary Panes="25" Client="20" TopContainer="13"></Summary>
+					<Pane-1 ID="40364" Type="0" Title="Workspace - ModuleView\nModuleView" DockingCX="200" DockingCY="120" LastHolder="18" DockingHolder="18"></Pane-1>
+					<Pane-2 ID="40365" Tag="83046744" Type="0" Title="Workspace - FileView\nFileView" DockingCX="200" DockingCY="120" LastHolder="18" DockingHolder="18"></Pane-2>
+					<Pane-3 ID="40100" Tag="130416456" Type="0" Title="Register" DockingCX="200" DockingCY="120" LastHolder="22" DockingHolder="22"></Pane-3>
+					<Pane-4 ID="40932" Tag="83287632" Type="0" Title="Emulator State" DockingCX="200" DockingCY="120" LastHolder="23" DockingHolder="23"></Pane-4>
+					<Pane-5 ID="40110" Type="0" Title="Callstack" DockingCX="200" DockingCY="120" LastHolder="25" DockingHolder="25"></Pane-5>
+					<Pane-6 ID="40000" Type="0" Title="Watch - Locals\nLocals" DockingCX="200" DockingCY="120" LastHolder="25" DockingHolder="25"></Pane-6>
+					<Pane-7 ID="40001" Type="0" Title="Watch - Watch1\nWatch1" DockingCX="200" DockingCY="120" LastHolder="25" DockingHolder="25"></Pane-7>
+					<Pane-8 ID="40050" Type="0" Title="Memory - Mem0\nMem0" DockingCX="200" DockingCY="120" LastHolder="25" DockingHolder="25"></Pane-8>
+					<Pane-9 ID="10001" Type="0" Title="Output" DockingCX="200" DockingCY="120" LastHolder="25" DockingHolder="25"></Pane-9>
+					<Pane-10 Type="5" Panes="0" Direction="0"></Pane-10>
+					<Pane-11 Type="5" Panes="0" Direction="1"></Pane-11>
+					<Pane-12 Type="5" Panes="0" Direction="3"></Pane-12>
+					<Pane-13 Type="2" Panes="2" Pane-1="14" Pane-2="24" DockingCY="873"></Pane-13>
+					<Pane-14 Type="2" Horiz="1" Panes="1" Pane-1="15" DockingCY="560"></Pane-14>
+					<Pane-15 Type="2" Horiz="1" Panes="2" Pane-1="16" Pane-2="21" DockingCY="394"></Pane-15>
+					<Pane-16 Type="2" Panes="1" Pane-1="17" DockingCX="1047"></Pane-16>
+					<Pane-17 Type="2" Horiz="1" Panes="2" Pane-1="18" Pane-2="19" DockingCY="342"></Pane-17>
+					<Pane-18 Type="1" Panes="2" Pane-1="1" Pane-2="2" Selected="2" DockingCX="200" DockingCY="120"></Pane-18>
+					<Pane-19 Type="2" Panes="1" Pane-1="20" DockingCX="843"></Pane-19>
+					<Pane-20 Type="4"></Pane-20>
+					<Pane-21 Type="2" Panes="2" Pane-1="22" Pane-2="23" DockingCX="229" DockingCY="457"></Pane-21>
+					<Pane-22 Type="1" Panes="1" Pane-1="3" Selected="3" DockingCX="200" DockingCY="327"></Pane-22>
+					<Pane-23 Type="1" Panes="1" Pane-1="4" Selected="4" DockingCX="287" DockingCY="126"></Pane-23>
+					<Pane-24 Type="2" Horiz="1" Panes="1" Pane-1="25" DockingCX="995" DockingCY="309"></Pane-24>
+					<Pane-25 Type="1" Panes="5" Pane-1="5" Pane-2="6" Pane-3="7" Pane-4="8" Pane-5="9" Selected="9" DockingCX="263" DockingCY="120"></Pane-25>
+				</Default>
+			</Dockinglayout>
+			<MainWindow Zoomed="1">
+				<Position x="110" y="110"/>
+				<Size cx="789" cy="557"/>
+			</MainWindow>
+			<CommandBars>
+				<CommandBars>
+					<CommandBar BarID="10066" Class="CScriptToolBar" Flags="63" Style="4194304" Title="Execute Script" MRUWidth="32767">
+						<Controls OriginalControls="1">
+							<Control Id="10065" Type="4" Class="CXTPControlPopup" Caption="Execute script" TooltipText="Execute script file" CommandBarId="16777216" DescriptionText="Execute a HiSCRIPT script file."></Control>
+							<Control Id="40398" Class="CXTPControlButton" Caption="Abort script file execution" TooltipText="Abort script file execution" DescriptionText="Abort script file execution."></Control>
+							<Control Id="10051" Class="CControlScriptButton" Style="3" Caption="RESET APPL" Parameter="C:\\VSS\\STR\\USB Package\\FIRMWARE\\str71x demos\\Virtual Com Port\\project\\HiTOP\\setting\\reset_appl.scr" BeginGroup="1" TooltipText="C:\\VSS\\STR\\USB Package\\FIRMWARE\\str71x demos\\Virtual Com Port\\project\\HiTOP\\setting\\reset_appl.scr"></Control>
+							<Control Id="10052" Class="CControlScriptButton" Style="3" Caption="RESET GO MAIN" Parameter="C:\\VSS\\STR\\USB Package\\FIRMWARE\\str71x demos\\Virtual Com Port\\project\\HiTOP\\setting\\reset_go_main.scr" TooltipText="C:\\VSS\\STR\\USB Package\\FIRMWARE\\str71x demos\\Virtual Com Port\\project\\HiTOP\\setting\\reset_go_main.scr"></Control>
+							<Control Id="10053" Class="CControlScriptButton" Style="3" TooltipText="C:\\VSS\\STR\\USB Package\\FIRMWARE\\str75x demos\\Custom_HID\\project\\HiTOP\\Setting\\disable_protection.scr"></Control>
+							<Control Id="10054" Class="CControlScriptButton"></Control>
+							<Control Id="10055" Class="CControlScriptButton"></Control>
+							<Control Id="10056" Class="CControlScriptButton"></Control>
+							<Control Id="10057" Class="CControlScriptButton"></Control>
+							<Control Id="10058" Class="CControlScriptButton"></Control>
+							<Control Id="10059" Class="CControlScriptButton"></Control>
+							<Control Id="10060" Class="CControlScriptButton"></Control>
+							<OriginalControls>
+								<Control Id="10065" Type="4" Class="CXTPControlPopup" Caption="Execute script" TooltipText="Execute script file" CommandBarId="16777217" DescriptionText="Execute a HiSCRIPT script file."></Control>
+								<Control Id="40398" Class="CXTPControlButton" Caption="Abort script file execution" TooltipText="Abort script file execution" DescriptionText="Abort script file execution."></Control>
+								<Control Id="10051" Class="CControlScriptButton" BeginGroup="1"></Control>
+								<Control Id="10052" Class="CControlScriptButton"></Control>
+								<Control Id="10053" Class="CControlScriptButton"></Control>
+								<Control Id="10054" Class="CControlScriptButton"></Control>
+								<Control Id="10055" Class="CControlScriptButton"></Control>
+								<Control Id="10056" Class="CControlScriptButton"></Control>
+								<Control Id="10057" Class="CControlScriptButton"></Control>
+								<Control Id="10058" Class="CControlScriptButton"></Control>
+								<Control Id="10059" Class="CControlScriptButton"></Control>
+								<Control Id="10060" Class="CControlScriptButton"></Control>
+							</OriginalControls>
+						</Controls>
+					</CommandBar>
+					<CommandBar Type="2" BarID="16777216" Class="CXTPPopupBar" Style="4194304" Position="5">
+						<Controls>
+							<Control Id="40399" Class="CControlExecScript" Caption="[Exec]" TooltipText="Execute script file" DescriptionText="Execute a HiSCRIPT script file."></Control>
+						</Controls>
+					</CommandBar>
+					<CommandBar Type="2" BarID="16777217" Class="CXTPPopupBar" Style="4194304" Position="5">
+						<Controls>
+							<Control Id="40399" Class="CControlExecScript" Caption="[Exec]" TooltipText="Execute script file" DescriptionText="Execute a HiSCRIPT script file."></Control>
+						</Controls>
+					</CommandBar>
+				</CommandBars>
+				<Layout>
+					<DockState Count="6" Version="32" ScreenSize="1280, 1024">
+						<BarInfo0 BarId="1" MRUWidth="32767"></BarInfo0>
+						<BarInfo1 BarId="10066" MRUWidth="32767" PointPos="333, 49" MRUDockPos="318, 54, 634, 81"></BarInfo1>
+						<BarInfo2 BarId="9025" MRUWidth="32767" PointPos="455, 23" MRUDockPos="522, 21, 758, 48"></BarInfo2>
+						<BarInfo3 BarId="9017" MRUWidth="32767" PointPos="683, 23" MRUDockPos="600, 18, 761, 45"></BarInfo3>
+						<BarInfo4 BarId="4004" MRUWidth="32767" PointPos="0, 49" MRUDockPos="-4, 57, 319, 84"></BarInfo4>
+						<BarInfo5 BarId="1053" MRUWidth="32767" PointPos="0, 23" MRUDockPos="-1, 32, 432, 58"></BarInfo5>
+					</DockState>
+					<DockBars>
+						<DockBar0 Id1="1" Id3="1053" Id4="9017" Id5="9025" Id7="10066" Id8="4004" Count="10"></DockBar0>
+					</DockBars>
+				</Layout>
+			</CommandBars>
+		</Layout>
+	</ScreenLayouts>
+	<IDESave/>
+	<HitopObjects>
+		<MiniSequences/>
+		<TimerTriggers/>
+		<Breakpoints/>
+	</HitopObjects>
+	<History Id="GO_UNTIL_COMMAND" Count="1" Capacity="10">
+		<HistoryElement Order="0">main</HistoryElement>
+	</History>
+	<ExceptionAssistant>
+		<Exceptions Id="ARM low vectors" Count="7">
+			<Exception Name="Reset" Number="0"/>
+			<Exception Name="Undefined Instruction" Number="1"/>
+			<Exception Name="SWI" Number="2"/>
+			<Exception Name="Prefetch Abort" Number="3"/>
+			<Exception Name="Data abort" Number="4"/>
+			<Exception Name="IRQ" Number="5"/>
+			<Exception Name="FIQ" Number="6"/>
+		</Exceptions>
+		<Interrupts Id="ST-Micro EIC" Count="32" VectorCount="32">
+			<IRQ Name="IRQ 00" Number="0"/>
+			<IRQ Name="IRQ 01" Number="1"/>
+			<IRQ Name="IRQ 02" Number="2"/>
+			<IRQ Name="IRQ 03" Number="3"/>
+			<IRQ Name="IRQ 04" Number="4"/>
+			<IRQ Name="IRQ 05" Number="5"/>
+			<IRQ Name="IRQ 06" Number="6"/>
+			<IRQ Name="IRQ 07" Number="7"/>
+			<IRQ Name="IRQ 08" Number="8"/>
+			<IRQ Name="IRQ 09" Number="9"/>
+			<IRQ Name="IRQ 10" Number="10"/>
+			<IRQ Name="IRQ 11" Number="11"/>
+			<IRQ Name="IRQ 12" Number="12"/>
+			<IRQ Name="IRQ 13" Number="13"/>
+			<IRQ Name="IRQ 14" Number="14"/>
+			<IRQ Name="IRQ 15" Number="15"/>
+			<IRQ Name="IRQ 16" Number="16"/>
+			<IRQ Name="IRQ 17" Number="17"/>
+			<IRQ Name="IRQ 18" Number="18"/>
+			<IRQ Name="IRQ 19" Number="19"/>
+			<IRQ Name="IRQ 20" Number="20"/>
+			<IRQ Name="IRQ 21" Number="21"/>
+			<IRQ Name="IRQ 22" Number="22"/>
+			<IRQ Name="IRQ 23" Number="23"/>
+			<IRQ Name="IRQ 24" Number="24"/>
+			<IRQ Name="IRQ 25" Number="25"/>
+			<IRQ Name="IRQ 26" Number="26"/>
+			<IRQ Name="IRQ 27" Number="27"/>
+			<IRQ Name="IRQ 28" Number="28"/>
+			<IRQ Name="IRQ 29" Number="29"/>
+			<IRQ Name="IRQ 30" Number="30"/>
+			<IRQ Name="IRQ 31" Number="31"/>
+			<Vector Number="0" Enabled="0"/>
+			<Vector Number="1" Enabled="0"/>
+			<Vector Number="2" Enabled="0"/>
+			<Vector Number="3" Enabled="0"/>
+			<Vector Number="4" Enabled="0"/>
+			<Vector Number="5" Enabled="0"/>
+			<Vector Number="6" Enabled="0"/>
+			<Vector Number="7" Enabled="0"/>
+			<Vector Number="8" Enabled="0"/>
+			<Vector Number="9" Enabled="0"/>
+			<Vector Number="10" Enabled="0"/>
+			<Vector Number="11" Enabled="0"/>
+			<Vector Number="12" Enabled="0"/>
+			<Vector Number="13" Enabled="0"/>
+			<Vector Number="14" Enabled="0"/>
+			<Vector Number="15" Enabled="0"/>
+			<Vector Number="16" Enabled="0"/>
+			<Vector Number="17" Enabled="0"/>
+			<Vector Number="18" Enabled="0"/>
+			<Vector Number="19" Enabled="0"/>
+			<Vector Number="20" Enabled="0"/>
+			<Vector Number="21" Enabled="0"/>
+			<Vector Number="22" Enabled="0"/>
+			<Vector Number="23" Enabled="0"/>
+			<Vector Number="24" Enabled="0"/>
+			<Vector Number="25" Enabled="0"/>
+			<Vector Number="26" Enabled="0"/>
+			<Vector Number="27" Enabled="0"/>
+			<Vector Number="28" Enabled="0"/>
+			<Vector Number="29" Enabled="0"/>
+			<Vector Number="30" Enabled="0"/>
+			<Vector Number="31" Enabled="0"/>
+		</Interrupts>
+	</ExceptionAssistant>
+	<PostLoadScript File="" ProjRelative="1"/>
+	<DownloadOptions Verify="0"/>
+	<Directories>
+		<Directory Id="ProjectAddApplication" Dir="C:\VSS\STR\USB Package\FIRMWARE\str71x demos\Virtual Com Port\project\HiTOP\obj\Virtual_Com_Port.elf"/>
+	</Directories>
+	<Applications>
+		<AppPath Id="Virtual_Com_Port">C:\VSS\STR\USB Package\FIRMWARE\str71x demos\Virtual Com Port\project\HiTOP\obj\</AppPath>
+	</Applications>
+	<Component Id="GDV" cur_pos="0" buf_size="1000"/>
+	<FlashProgramming RAMBase="0x20000000" RAMLength="0x2000" NumDevices="1" SaveRestoreRAM="0" EnableProgramming="1">
+		<FlashDevice Type="STR71xF 256k Program FlashROM" Index="0" BusWidth="32" DeviceMode="32" BaseAddress="0x40000000" Manufacturer="ST">
+			<Sectors Count="0"/>
+		</FlashDevice>
+	</FlashProgramming>
+	<LinkerApplications Count="1" RelPath="1" AutoLoad="0" CurrentIdeApp="Virtual_Com_Port" AutoDetectChanges="1">
+		<Loader Id="TaskingCED"/>
+		<Application Pos="0" Load="1" AppName="Virtual_Com_Port" CodeFile=".\obj\Virtual_Com_Port.htx" LinkerFile=".\obj\Virtual_Com_Port.elf" CurrentBuild="Debug">
+			<SymbolLoader ProjRel="1" MessageFile="" NeedsSymprepRun="0">
+				<Options Cache="128" Reload="RELOAD" CmdFile="" DestDir=".\obj\" OnlySym="0" StdCode="Intel-Hex" Verbose="1" CtrlFile="" WarnLevel="0">
+					<SourcePath>
+						<Path Text=".\Src\"/>
+						<Path Text="..\..\source\"/>
+						<Path Text="..\..\..\..\USBLib\src\"/>
+						<Path Text="..\..\..\..\FWLib\str71x\src\"/>
+					</SourcePath>
+					<ProcessorSpecific>
+						<Option Text="FW_TYPES"/>
+					</ProcessorSpecific>
+					<DebugModules Include="1"/>
+				</Options>
+			</SymbolLoader>
+			<RTOS Id="" Dll=""/>
+			<BuildConfiguration Id="Debug" File="" ToolId="IdeTaskingARM" BuildCfgChanged="false">
+				<General OutputPath=".\obj\" TargetName="Virtual_Com_Port.elf">
+					<IncludePath Path="..\..\include\" Position="0"/>
+					<IncludePath Path="..\..\..\..\USBLib\inc\" Position="1"/>
+					<IncludePath Path="..\..\..\..\FWLib\str71x\inc\" Position="2"/>
+				</General>
+				<Assembler Options="-Wa--output -Wa--symbol-scope=local -Wa-Ogjs -Wa-debug-info=h -CARMv4T  --create=object -Wa-il  -Wa-gaHL  -Wa-w179  "/>
+				<Compiler Defines="" Options="-CARMv4T -Wc-c99 -Wc--align-composites=n -Wc-O1 -Wc-ga -Wc--language=+strings --create=object -Wc-AX  -Wc-t4  -Wc-w509 -Wc-w553 -Wc-w554 -Wc-w560  "/>
+				<Linker File=".\setting\link.lnk" Options="-CARMv4T  -Wl-OCLTXY   " PostBuild=""/>
+			</BuildConfiguration>
+		</Application>
+	</LinkerApplications>
+	<ScriptBarSettings>
+		<ScriptButton Id="1" File=".\setting\reset_appl.scr" ButtonText="RESET APPL" ProjRelative="1"/>
+		<ScriptButton Id="2" File=".\setting\reset_go_main.scr" ButtonText="RESET GO MAIN" ProjRelative="1"/>
+		<ScriptButton Id="3" File="" ButtonText="" ProjRelative="1"/>
+		<ScriptButton Id="4" File="" ButtonText="" ProjRelative="1"/>
+		<ScriptButton Id="5" File="" ButtonText="" ProjRelative="1"/>
+		<ScriptButton Id="6" File="" ButtonText="" ProjRelative="1"/>
+		<ScriptButton Id="7" File="" ButtonText="" ProjRelative="1"/>
+		<ScriptButton Id="8" File="" ButtonText="" ProjRelative="1"/>
+		<ScriptButton Id="9" File="" ButtonText="" ProjRelative="1"/>
+		<ScriptButton Id="10" File="" ButtonText="" ProjRelative="1"/>
+	</ScriptBarSettings>
+</HiTOPProject>
+

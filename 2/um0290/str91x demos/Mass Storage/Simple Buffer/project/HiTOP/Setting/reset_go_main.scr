@@ -1,0 +1,224 @@
+// Hitex/We/25.04.2006
+//       Dh/04.06.2007
+// Executable Script file for HiTOP Debugger
+// Target Hitex evaluation board with STR912Fx44
+// Flash application
+
+// Reset    
+RESET TARGET
+
+// #########################################################################################
+// Boot Bank base address register (FMI_BBADR):
+// Configure memory, boot from Bank 0
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// Boot bank base address (BBADDR[23:0])                  |23:00| 0x000000
+// #########################################################################################
+OUTPUT DWORD TO 0x5400000C = 0x00000000 
+
+// #########################################################################################
+// Boot bank size register (FMI_BBSR):
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// Boot bank size (BBSIZE[3:0])                           |23:00| 256k
+// #########################################################################################
+OUTPUT DWORD TO 0x54000000 = 0x00000004 
+
+// #########################################################################################
+// Non-boot bank base address register (FMI_NBBADR):
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// Non-boot bank base address (NBBADDR[23:0])             |23:00| 0x020000
+// #########################################################################################
+OUTPUT DWORD TO 0x54000010 = 0x00020000
+
+// #########################################################################################
+// Non-boot bank size register (FMI_NBBSR):
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// Non-boot bank size (NBBSIZE[3:0])                      |23:00| 32k
+// #########################################################################################
+OUTPUT DWORD TO 0x54000004 = 0x00000002
+
+// #########################################################################################
+// FMI Control register (FMI_CR):
+// Enable both flash banks
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// Flash Bank 0 enable (B0EN)                             |   03| enabled
+// Flash Bank 1 enable (B0EN)                             |   04| enabled
+// Flash Bank Error interrupt enable (BERRIE)             |   06| disabled
+// Out of Memory interrupt enable (OMIE)                  |   07| diasabled
+// Write Wait States (WWS)                                |   08| 1 clock cycle
+// #########################################################################################
+OUTPUT DWORD TO 0x54000018 = 0x00000018
+
+// #########################################################################################
+// FMI Status register (FMI_SR):
+// clear errors in status
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// Flash Bank 0 error (B0ERR:)                            |   00| cleared
+// Flash Bank 1 error (B1ERR:)                            |   01| cleared
+// Out of Memory error (OM)                               |   03| cleared
+// PFQBCEN Status (PFQBCEN)                               |   04| -
+// #########################################################################################
+OUTPUT DWORD TO 0x5400001C = 0x0000000B
+
+// #########################################################################################
+// System configuration register 0 (SCU_SCR0):
+// Configure SRAm to 96K and disable PFQ ( prefetch queue) and BC (branch cache)
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// PFQBC Unit enable (EN_PFQBC)                           |   00| disabled
+// DTCM Wait state enable (WSR_DTCM)                      |   01| 1 wait state
+// AHB Wait state enable (WSR_AHB)                        |   02| 1 wait state
+// SRAM size (SRAM_SIZE[1:0])                             |04:03| 96 KB
+// SRAM Arbiter lock transfer enable (SRAM_LK_EN)         |   05| disabled
+// EMI Mux/Demux (EMI_MUX)                                |   06| Multiplexed mode
+// EMI Active Level Polarity (EMI_ALE_POLR)               |   07| Active high
+// EMI Active Level Length (EMI_ALE_LNGT)                 |   08| Two clock cycle
+// UARTx IrDA mode selection (UART_IRDA[2:0])             |12:10| UART mode
+// ETM Trigger/External Debug Selection (EXT_ETMT_EDBGR)  |   13| External Debug request
+// GPIO Port 3 External Debug Configuration (P30_SELEDBG) |   14| Port 3.0 not configured
+// #########################################################################################
+OUTPUT DWORD TO 0x5C002034 = 0x00000196
+
+// #########################################################################################
+// GPIO output register 2 (SCU_GPIOOUT2)
+// general purpose output port2 to alternative funciton 3 (ETM)
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// P2.0 Port Output Control bits                          |01:00| Alternate Output 3
+// P2.1 Port Output Control bits                          |03:02| Alternate Output 3
+// P2.2 Port Output Control bits                          |05:04| Alternate Output 3
+// P2.3 Port Output Control bits                          |07:06| Alternate Output 3
+// P2.4 Port Output Control bits                          |09:08| Alternate Output 3
+// P2.5 Port Output Control bits                          |11:10| Alternate Output 3
+// P2.6 Port Output Control bits                          |13:12| Alternate Output 3
+// P2.7 Port Output Control bits                          |15:14| Alternate Output 3
+// #########################################################################################
+OUTPUT DWORD TO 0x5C00204C = 0x0000FFFF 
+
+// #########################################################################################
+// GPIO output register 6 (SCU_GPIOOUT6)
+// general purpose output port6 to alternative funciton 3 (ETM)
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// P6.0 Port Output Control bits                          |01:00| Alternate Output 3
+// P6.1 Port Output Control bits                          |03:02| Alternate Output 3
+// P6.2 Port Output Control bits                          |05:04| Alternate Output 3
+// P6.3 Port Output Control bits                          |07:06| Alternate Output 3
+// P6.4 Port Output Control bits                          |09:08| Alternate Output 3
+// P6.5 Port Output Control bits                          |11:10| Alternate Output 3
+// P6.6 Port Output Control bits                          |13:12| Alternate Output 3
+// P6.7 Port Output Control bits                          |15:14| Alternate Output 3
+// #########################################################################################
+OUTPUT DWORD TO 0x5C00205C = 0x0000FFFF
+
+// #########################################################################################
+// Interrupt Enable Clear Register 1 (VIC1_INTECR):
+// clear enables of the VIC
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// Interrupt Enable Clear bits (IntEnClear)               |15:00| Interrupt disabled
+// #########################################################################################
+OUTPUT DWORD TO 0xFC000014 = 0xFFFFFFFF 
+
+// #########################################################################################
+// Interrupt Enable Clear Register 0 (VIC0_INTECR):
+// clear enables of the VIC
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// Interrupt Enable Clear bits (IntEnClear)               |15:00| Interrupt disabled
+// #########################################################################################
+OUTPUT DWORD TO 0xFFFFF014 = 0xFFFFFFFF 
+
+// #########################################################################################
+// Clock control register (SCU_CLKCNTR):
+// Reset Master clock control to default
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// Main Clock Source (MCLKSEL)                            |     | fMSTR = fOSC
+// RCLK divider (RCLKDIV)                                 |     | RCLK = fMSTR
+// HCLK divider(AHBDIV)                                   |     | HCLK = RCLK
+// PCLK divider (APBDIV)                                  |     | PCLK = RCLK
+// USB 48 MHz Clock Selection (USBSEL)                    |     | fMSTR
+// MII_PHYCLK Enable (PHYSEL)                             |     | output disabled
+// #########################################################################################
+OUTPUT DWORD TO 0x5C002000 = 0x00020002
+
+// #########################################################################################
+// Power management register (SCU_PWRMNG):
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// Power Mode (PWR_MODE)                                  |     | Run mode
+// Special Interrupt mode (CPU_INTR)                      |     | SCU_CLKCNT.RCLKDIV
+// Flash Power Down in Debug Mode (FLAS_PD_DBG)           |     | not enter power down
+// #########################################################################################
+OUTPUT DWORD TO 0x5C00200C = 0x00000000
+
+// #########################################################################################
+// Peripheral clock gating register 0 (SCU_PCGR0)
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// FMI clock gating (FMI)                                 |   00| running
+// PQFBC clock gating (PQFBC)                             |   01| running
+// SRAM clock gating (SRAM)                               |   03| running
+// SRAM arbiter clock gating (SRAM_ARBITER)               |   04| running
+// VIC peripheral clock gating (VIC)                      |   05| stopped
+// EMI peripheral clock gating (EMI)                      |   06| stopped
+// External memory clock gating (EXT_MEM_CLK)             |   07| stopped
+// DMA peripheral clock gating (DMA)                      |   08| stopped
+// USB peripheral clock gating (USB)                      |   09| stopped
+// USB 48 MHz clock gating (USB48M)                       |   10| stopped
+// Ethernet peripheral clock gating (MAC)                 |   11| stopped
+// #########################################################################################
+OUTPUT DWORD TO 0x5C002014 = 0x0000001B
+
+// #########################################################################################
+// Peripheral reset register 0 (SCU_PRR0):
+// -----------------------------------------------------------------------------------------
+// Description                                            | Bits| Value
+// -----------------------------------------------------------------------------------------
+// FMI reset (RST_FMI)                                    |   00| no reset
+// PQFBC reset (RST_PQFBC)                                |   01| no reset
+// SRAM arbiter reset (RST_SRAM_ARBITER)                  |   04| no reset
+// VIC peripheral reset (RST_VIC)                         |   05| reset
+// EMI peripheral reset (RST_EMI)                         |   06| reset
+// DMA peripheral reset (RST_DMA)                         |   08| reset
+// USB peripheral reset (RST_USB)                         |   09| reset
+// Ethernet peripheral reset (RST_MAC)                    |   11| reset
+// PFQBC AHB reset (RST_PFQBC_AHB)                        |   12| no reset
+// #########################################################################################
+OUTPUT DWORD TO 0x5C00201C = 0x00001013
+
+// init current processor status to avoid ints
+REGISTER cpsr = 0x000000D3
+REGISTER pc = 0x00
+
+// execute program till main
+Go UNTIL main
+
+wait
+
+
+
+
+
+
+

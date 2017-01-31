@@ -1,0 +1,1021 @@
+RIDE Project File
+File Version=3
+[BN]
+Build=BN747-STR7-ARM
+[Ref]
+Ref=11
+[Type]
+Type=0
+[Environment]
+Begin Group CompEdit
+EditCodeCoverage=0
+TestMakeDate=1
+Promptrebuild=0
+DebugMessage=1000
+Promptdirtyoptions=0
+Prompttoreloadfiles=0
+Promptsucsorfail=0
+Promptenddebug=1
+Promptsave=0
+End Group CompEdit
+Begin Group Edit
+DocExts=*.pdf;*.htm;*.doc
+DocInChild=1
+InsertSpace=0
+Showinfo=1
+Showtool=1
+Showpath=1
+Promptbeforedelete=0
+Oemtoascii=0
+Decalage=2
+Undonumber=10
+TabStop=3
+End Group Edit
+Begin Group Font
+Height=12
+Name=courier new
+Default=1
+End Group Font
+Begin Group Colors
+Data=14745599
+Code=15658705
+ColorBackground=1
+Error=255
+String=16711680
+Operator=8421504
+Key=0
+Comment=8421376
+Control=32768
+Numeric=16711680
+Identifier=8388608
+Highlight=1
+End Group Colors
+End Options Environment
+
+[Directories]
+Begin Group Directories
+Source=
+LibOpti=c:\RIDE\Lib\CCLib
+List=lst
+Object=obj
+Lib=.;%RIDEDIR%\lib\STRX
+Include=./../;./../../library/inc
+End Group Directories
+End Options Directories
+
+[Targets]
+Number=1
+
+Name=ARM
+DllName=..\..\..\..\..\..\..\RIDE\BIN\targetarm.dll
+Begin Group ARM
+HBAddr=400000
+FlashMap=0
+Interwork=0
+ThumbMode=0
+BootMode=0
+MicroIndex=0
+MicroName=STR912FW44
+LaunchMode=0
+End Group ARM
+
+
+[Magics]
+Number=0
+
+
+[Nets]
+Nb Nets=0
+
+[Tools]
+Number=4
+
+Path=..\..\..\..\..\..\..\RIDE\BIN\aarmv32.dll
+Name=AS-ARM
+SrcExt=*.s
+ObjExt=*.o
+Target Translate=0
+Begin Options AS-ARM
+Begin Group General
+More=
+Warning=0
+Labels=0
+Dwarf2=0
+BigEndian=0
+LittleEndian=1
+Thumb=0
+End Group General
+End Options AS-ARM
+
+Path=..\..\..\..\..\..\..\RIDE\BIN\carmv32.dll
+Name=GCC-ARM
+SrcExt=*.c;*.h
+ObjExt=*.o
+Target Translate=0
+Begin Options GCC-ARM
+Begin Group More
+More=
+End Group More
+Begin Group Warnings
+Warnunused=0
+Warnswitch=0
+Warnshad=0
+Supress=0
+Warnall=0
+Pedantic=0
+End Group Warnings
+Begin Group Optimisations
+Size=4
+Optimlevel=4
+Inlinefunc=0
+Noinlining=0
+Allow=0
+End Group Optimisations
+Begin Group Code
+Packstruct=0
+Volatileg=0
+Volatile=0
+Shortdouble=0
+Shortenum=0
+End Group Code
+Begin Group Debug
+Temp=0
+Debug=1
+End Group Debug
+Begin Group Defines
+Defines=
+End Group Defines
+Begin Group Dialect
+Signedchar=0
+Traditional=0
+Ansi=0
+End Group Dialect
+Begin Group Specific_Options
+Interwork=0
+BigEndian=0
+APCS=0
+LittleEndian=1
+Thumb=1
+End Group Specific_Options
+End Options GCC-ARM
+
+Path=..\..\..\..\..\..\..\RIDE\BIN\larmv32.dll
+Name=LD-ARM
+SrcExt=*.o
+ObjExt=*.elf
+Target Translate=1
+Begin Options LD-ARM
+Begin Group General
+More=
+Script=crt0.ld
+Startup=./obj/91x_init.o
+Lim16K=0
+DefScript=1
+DefStartup=0
+IO=1
+NoFloatPrint=0
+SmallPrint=1
+STR7Lib=0
+Mathlib=1
+Clib=1
+Norom=0
+Once=0
+IndCalls=1
+Map=1
+End Group General
+End Options LD-ARM
+
+Path=..\..\..\..\..\..\..\RIDE\BIN\libmanarm.dll
+Name=LIBMANARM
+SrcExt=
+ObjExt=
+Target Translate=0
+Begin Options LIBMANARM
+End Options LIBMANARM
+
+
+[Nodes]
+App Number=1
+Name=project.elf
+Type=0
+Tool Ref=LD-ARM
+Info Code=44300
+Info XData=0
+Info Data=1108
+Target Ref=ARM
+Format Ref=ELF-ARM
+Use Local=0
+Begin Group ARM
+HBAddr=400000
+FlashMap=0
+Interwork=0
+ThumbMode=0
+BootMode=0
+MicroIndex=0
+MicroName=STR912FW44
+LaunchMode=0
+End Group ARM
+Nb Nodes=4
+Node Begin
+Relative Path=..\main.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=54
+Dependance=c:\vss\str91x\introduction package\software\fwlib\project\main.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_lib.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_ahbapb.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_emi.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_dma.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_fmi.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_vic.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_it.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wiu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_tim.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_gpio.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_rtc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_uart.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_ssp.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_can.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_adc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wdg.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_i2c.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wiu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_mc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\stdio.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\_ansi.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\newlib.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\sys\config.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\machine\ieeefp.h
+Dependance=c:\program files\gnuarm\lib\gcc\arm-elf\4.0.0\include\stddef.h
+Dependance=c:\program files\gnuarm\lib\gcc\arm-elf\4.0.0\include\stdarg.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\sys\reent.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\sys\_types.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\sys\lock.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\sys\types.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\machine\types.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\sys\stdio.h
+Info Code=1188
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096894
+Node End
+Node Begin
+Relative Path=..\91x_it.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=55
+Dependance=c:\vss\str91x\introduction package\software\fwlib\project\91x_it.c
+Dependance=c:\vss\str91x\introduction package\software\fwlib\project\91x_it.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_lib.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_ahbapb.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_emi.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_dma.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_fmi.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_vic.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_it.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wiu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_tim.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_gpio.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_rtc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_uart.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_ssp.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_can.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_adc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wdg.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_i2c.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wiu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_mc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\stdio.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\_ansi.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\newlib.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\sys\config.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\machine\ieeefp.h
+Dependance=c:\program files\gnuarm\lib\gcc\arm-elf\4.0.0\include\stddef.h
+Dependance=c:\program files\gnuarm\lib\gcc\arm-elf\4.0.0\include\stdarg.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\sys\reent.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\sys\_types.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\sys\lock.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\sys\types.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\machine\types.h
+Dependance=c:\program files\gnuarm\arm-elf\sys-include\sys\stdio.h
+Info Code=604
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096894
+Node End
+Node Begin
+Relative Path=library
+Type=2
+Tool Ref=
+Format Ref=
+Nb Dep=0
+Info Code=0
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=18
+Node Begin
+Relative Path=..\..\library\src\91x_adc.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_adc.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_adc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=1680
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096893
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_ahbapb.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=5
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_ahbapb.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_ahbapb.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Info Code=268
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096893
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_can.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_can.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_can.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=2904
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=10
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096893
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_dma.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_dma.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_dma.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=1288
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096892
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_emi.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_emi.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_emi.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=452
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096892
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_fmi.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=5
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_fmi.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_fmi.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Info Code=888
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096892
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_gpio.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_gpio.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_gpio.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=1440
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096891
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_i2c.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_i2c.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_i2c.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=1140
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096891
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_lib.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=41
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_lib.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_lib.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_ahbapb.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_emi.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_dma.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_fmi.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_vic.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_it.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wiu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_tim.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_gpio.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_rtc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_uart.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_ssp.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_can.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_adc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wdg.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_i2c.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wiu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_mc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=0
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096891
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_mc.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_mc.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_mc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=2364
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096890
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_rtc.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_rtc.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_rtc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=1584
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096890
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_scu.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=5
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_scu.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Info Code=2072
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096889
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_ssp.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_ssp.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_ssp.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=828
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096889
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_tim.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_tim.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_tim.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=1404
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096888
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_uart.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_uart.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_uart.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=1368
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096888
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_vic.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=42
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_vic.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_vic.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_it.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_lib.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_ahbapb.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_emi.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_dma.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_fmi.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_vic.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wiu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_tim.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_gpio.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_rtc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_uart.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_ssp.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_can.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_adc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wdg.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_i2c.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wiu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_mc.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=1676
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096887
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_wdg.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_wdg.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wdg.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=456
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096887
+Node End
+Node Begin
+Relative Path=..\..\library\src\91x_wiu.c
+Type=0
+Tool Ref=GCC-ARM
+Format Ref=
+Nb Dep=7
+Dependance=c:\vss\str91x\introduction package\software\fwlib\library\src\91x_wiu.c
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_wiu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\PROJECT\91x_conf.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_type.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_scu.h
+Dependance=C:\VSS\STR91X\INTRODUCTION PACKAGE\SOFTWARE\FWLIB\library\inc\91x_map.h
+Info Code=272
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096886
+Node End
+MakeDate=0
+Node End
+Node Begin
+Relative Path=startup
+Type=2
+Tool Ref=
+Format Ref=
+Nb Dep=0
+Info Code=0
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=1
+Node Begin
+Relative Path=91x_init.s
+Type=0
+Tool Ref=AS-ARM
+Format Ref=
+Nb Dep=0
+Info Code=444
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Do Translate=1
+Do Load=0
+Nb Nodes=0
+MakeDate=-917096886
+Node End
+MakeDate=0
+Node End
+Do Translate=1
+PostLinker Ref=
+
+
+[Desktop Files]
+Nb Desktop Files=0
+
+[Closed Files]
+Nb Closed Files=5
+c:\vss\str91x\introduction?package\software\fwlib\library\src\91x_ahbapb.c (0,0-0,0) 0
+
+c:\vss\str91x\introduction?package\software\fwlib\project\ride\91x_init.s (0,0-0,0) 0
+
+c:\vss\str91x\introduction?package\software\fwlib\project\91x_it.c (0,0-0,0) 0
+
+c:\vss\str91x\introduction?package\software\fwlib\project\main.c (0,0-0,0) 0
+
+c:\vss\str91x\introduction?package\software\fwlib\library\src\91x_adc.c (0,0-0,0) 0
+
+
+[Dim Views]
+Nb Dim Views=13
+0 (0,0-0,0)
+1 (0,0-0,0)
+2 (0,0-0,0)
+3 (0,0-0,0)
+4 (-4,-30-896,398)
+5 (340,385-570,634)
+6 (0,0-0,0)
+7 (0,0-0,0)
+8 (0,0-0,0)
+9 (0,0-0,0)
+10 (0,0-0,0)
+11 (0,0-0,0)
+12 (0,0-0,0)
+
+[DebugTool]
+Debug=
+
+[Project Rect]
+(0,0-0,0)
+
+[LastSel]
+LastAOF=c:\vss\str91x\introduction package\software\fwlib\project\ride\project.elf
+

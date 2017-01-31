@@ -1,0 +1,5 @@
+// reset ARM processor
+Reset Target
+
+// set Programcounter
+%pc = 0x0 

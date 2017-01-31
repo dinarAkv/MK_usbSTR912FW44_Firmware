@@ -1,0 +1,74 @@
+
+<ApplicationBuild Header="project" Extern=".\project.rapp" Path=".\project.rapp" OutputFile=".\obj\project.elf" sate="98" >
+	<Group Header="User" Marker="-1" OutputFile="" sate="96" >
+		<NodeC Path="..\..\main.c" Header="main.c" Marker="-1" OutputFile=".\obj\main.o" sate="0" />
+		<NodeC Path="..\..\75x_it.c" Header="75x_it.c" Marker="-1" OutputFile=".\obj\75x_it.o" sate="0" />
+						
+	</Group>
+	<Group Header="FWLib" Marker="-1" OutputFile="" sate="96" >
+		<NodeC Path="..\..\..\..\..\FWLib\str75x\src\75x_eic.c" Header="75x_eic.c" Marker="-1" OutputFile=".\obj\75x_eic.o" sate="0" />
+		<NodeC Path="..\..\..\..\..\FWLib\str75x\src\75x_extit.c" Header="75x_extit.c" Marker="-1" OutputFile=".\obj\75x_extit.o" sate="0" />
+		<NodeC Path="..\..\..\..\..\FWLib\str75x\src\75x_gpio.c" Header="75x_gpio.c" Marker="-1" OutputFile=".\obj\75x_gpio.o" sate="0" />
+		<NodeC Path="..\..\..\..\..\FWLib\str75x\src\75x_lib.c" Header="75x_lib.c" Marker="-1" OutputFile=".\obj\75x_lib.o" sate="0" />
+		<NodeC Path="..\..\..\..\..\FWLib\str75x\src\75x_mrcc.c" Header="75x_mrcc.c" Marker="-1" OutputFile=".\obj\75x_mrcc.o" sate="0" />
+						
+	</Group>
+	<Group Header="RIDE" Marker="-1" OutputFile="" sate="96" >
+		<NodeASM Path=".\crt0_STR75x.s" Header="crt0_STR75x.s" Marker="-1" OutputFile=".\obj\crt0_STR75x.o" sate="0" />
+						
+	</Group>
+	<Options>
+		<Config Header="Standard" >
+			<Set Header="ApplicationBuild" >
+				<Section Header="General" >
+					<Property Header="TargetFamily" Value="ARM" />
+																									
+				</Section>
+				<Section Header="Directories" >
+					<Property Header="OutDir" Value="$(ApplicationDir)\obj" Removable="1" />
+					<Property Header="ListDir" Value="$(ApplicationDir)\lst" Removable="1" />
+					<Property Header="IncDir" Value=".\..\..;.\..\..\..\..\..\FWLib\str75x\inc" Removable="1" />
+							
+				</Section>
+					
+			</Set>
+			<Set Header="Target" >
+				<Section Header="ProcessorARM" >
+					<Property Header="Processor" Value="STR750FV2" />
+							
+				</Section>
+				<Section Header="ToolSetARM" >
+					<Property Header="BuildToolSetARM" Value="ARM\\GNU.config" Removable="1" />
+																									
+				</Section>
+					
+			</Set>
+			<Set Header="GCC" >
+				<Section Header="OPTIMIZE" >
+					<Property Header="Optimize" Value="-Os" Removable="1" />
+																									
+				</Section>
+																			
+			</Set>
+			<Set Header="LD" >
+				<Section Header="Startup" >
+					<Property Header="DEFAULTSTARTUP" Value="No" Removable="1" />
+					<Property Header="File" Value="" Removable="1" />
+																									
+				</Section>
+				<Section Header="Scripts" >
+					<Property Header="StarterKitLimit" Value="No" Removable="1" />
+					<Property Header="SCRIPTFILES" Value="No" Removable="1" />
+					<Property Header="File" Value="str75x_flash.ld" Removable="1" />
+							
+				</Section>
+				<Section Header="LIB" >
+					<Property Header="STLIB" Value="0" Removable="1" />
+					<Property Header="UART0PUTC" Value="0" Removable="1" />
+							
+				</Section>
+					
+			</Set>
+		</Config>
+	</Options>
+</ApplicationBuild>

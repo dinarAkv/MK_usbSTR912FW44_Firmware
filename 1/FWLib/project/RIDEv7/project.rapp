@@ -1,0 +1,125 @@
+
+<ApplicationBuild Header="project" Extern=".\project.rapp" Path=".\project.rapp" OutputFile="obj\project.elf" sate="98" Config="FLASH" >
+	<Group Header="Library" Marker="-1" OutputFile="" sate="0" >
+		<NodeC Path="..\..\library\src\91x_adc.c" Header="91x_adc.c" Marker="-1" OutputFile="obj\91x_adc.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_ahbapb.c" Header="91x_ahbapb.c" Marker="-1" OutputFile="obj\91x_ahbapb.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_can.c" Header="91x_can.c" Marker="-1" OutputFile="obj\91x_can.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_dma.c" Header="91x_dma.c" Marker="-1" OutputFile="obj\91x_dma.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_emi.c" Header="91x_emi.c" Marker="-1" OutputFile="obj\91x_emi.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_fmi.c" Header="91x_fmi.c" Marker="-1" OutputFile="obj\91x_fmi.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_gpio.c" Header="91x_gpio.c" Marker="-1" OutputFile="obj\91x_gpio.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_i2c.c" Header="91x_i2c.c" Marker="-1" OutputFile="obj\91x_i2c.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_lib.c" Header="91x_lib.c" Marker="-1" OutputFile="obj\91x_lib.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_mc.c" Header="91x_mc.c" Marker="-1" OutputFile="obj\91x_mc.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_rtc.c" Header="91x_rtc.c" Marker="-1" OutputFile="obj\91x_rtc.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_scu.c" Header="91x_scu.c" Marker="-1" OutputFile="obj\91x_scu.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_ssp.c" Header="91x_ssp.c" Marker="-1" OutputFile="obj\91x_ssp.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_tim.c" Header="91x_tim.c" Marker="-1" OutputFile="obj\91x_tim.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_uart.c" Header="91x_uart.c" Marker="-1" OutputFile="obj\91x_uart.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_vic.c" Header="91x_vic.c" Marker="-1" OutputFile="obj\91x_vic.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_wdg.c" Header="91x_wdg.c" Marker="-1" OutputFile="obj\91x_wdg.o" sate="0" />
+		<NodeC Path="..\..\library\src\91x_wiu.c" Header="91x_wiu.c" Marker="-1" OutputFile="obj\91x_wiu.o" sate="0" />
+																																																
+	</Group>
+	<Group Header="startup" Marker="-1" OutputFile="" sate="0" >
+		<NodeASM Path=".\91x_init.s" Header="91x_init.s" Marker="-1" OutputFile="obj\91x_init.o" sate="0" />
+																																																
+	</Group>
+	<NodeC Path="..\91x_it.c" Header="91x_it.c" Marker="-1" OutputFile="obj\91x_it.o" sate="0" />
+	<Configs>
+		<Config Header="FLASH" />
+		<Config Header="RAM" />
+																																							
+	</Configs>
+	<NodeC Path="..\main.c" Header="main.c" Marker="-1" OutputFile="obj\main.o" sate="0" />
+	<Options>
+		<Config Header="Standard" >
+			<Set Header="ApplicationBuild" >
+				<Section Header="General" >
+					<Property Header="TargetFamily" Value="ARM" />
+																																																																																																																																																							
+				</Section>
+				<Section Header="Directories" >
+					<Property Header="IncDir" Value=".\..\..\library\inc;.\.." Removable="1" />
+					<Property Header="OutDir" Value="obj" Removable="1" />
+					<Property Header="ListDir" Value="lst" Removable="1" />
+																																																																																																																																																							
+				</Section>
+																																																																																																																					
+			</Set>
+			<Set Header="Target" >
+				<Section Header="ProcessorARM" >
+					<Property Header="Processor" Value="STR912FW44" />
+																																																																																																																																																							
+				</Section>
+				<Section Header="ToolSetARM" >
+					<Property Header="BuildToolSetARM" Value="ARM\\GNU.config" Removable="1" />
+																																																																																																																																																							
+				</Section>
+																																																																																																																					
+			</Set>
+			<Set Header="LD" >
+				<Section Header="LIB" >
+					<Property Header="STLIB" Value="0" Removable="1" />
+					<Property Header="NOFLOATP" Value="0" Removable="1" />
+					<Property Header="SMALLP" Value="0" Removable="1" />
+																																																																																																																																																							
+				</Section>
+				<Section Header="Startup" >
+					<Property Header="DEFAULTSTARTUP" Value="No" Removable="1" />
+					<Property Header="File" Value="" Removable="1" />
+																																																																																																																																																							
+				</Section>
+				<Section Header="Scripts" >
+					<Property Header="StarterKitLimit" Value="No" Removable="1" />
+																																																																																																																																																							
+				</Section>
+																																																																																																																					
+			</Set>
+																																																																																
+		</Config>
+		<Config Header="RAM" >
+			<Set Header="Target" >
+				<Section Header="ProcessorARM" >
+					<Property Header="BootMode" Value="1" Removable="1" />
+																																																																																																																												
+				</Section>
+																																																																																																
+			</Set>
+																																																																	
+		</Config>
+		<Config Header="FLASH" >
+			<Set Header="LD" >
+				<Section Header="LIB" >
+					<Property Header="SMALLP" Value="1" Removable="1" />
+					<Property Header="UART0PUTC" Value="1" Removable="1" />
+					<Property Header="NOFLOATP" Value="0" Removable="1" />
+																																		
+				</Section>
+				<Section Header="Startup" >
+					<Property Header="DEFAULTSTARTUP" Value="No" Removable="1" />
+																																																													
+				</Section>
+				<Section Header="Linker" >
+					<Property Header="GC_SECTIONS" Value="-Wl,-static -Wl,--gc-sections" Removable="1" />
+																																											
+				</Section>
+																										
+			</Set>
+			<Set Header="GCC" >
+				<Section Header="OPTIMIZE" >
+					<Property Header="Optimize" Value="-O2" Removable="1" />
+							
+				</Section>
+					
+			</Set>
+			<Set Header="ApplicationBuild" >
+				<Section Header="Directories" >
+					<Property Header="IncDir" Value=".\..;.\..\..\library\inc" Removable="1" />
+																																		
+				</Section>
+																										
+			</Set>
+		</Config>
+	</Options>
+</ApplicationBuild>

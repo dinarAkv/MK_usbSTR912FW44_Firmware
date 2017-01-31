@@ -1,0 +1,7 @@
+// reset ARM processor
+RESET TARGET 
+
+register PC=0
+REGISTER cpsr = 0x000000D3
+
+

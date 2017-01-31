@@ -1,0 +1,123 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+Target (JoystickMouse), 0x0004 // Tools: 'ARM-ADS'
+
+Group (Application files)
+Group (RVMDK)
+Group (FWLib)
+Group (USBLib)
+
+File 1,1,<..\..\source\71x_it.c><71x_it.c>
+File 1,1,<..\..\source\hw_config.c><hw_config.c>
+File 1,1,<..\..\source\main.c><main.c>
+File 1,1,<..\..\source\usb_desc.c><usb_desc.c>
+File 1,1,<..\..\source\usb_istr.c><usb_istr.c>
+File 1,1,<..\..\source\usb_prop.c><usb_prop.c>
+File 1,1,<..\..\source\usb_pwr.c><usb_pwr.c>
+File 2,2,<.\71x_init.s><71x_init.s>
+File 2,2,<.\71x_vect.s><71x_vect.s>
+File 3,1,<..\..\..\..\FWLib\str71x\src\71x_xti.c><71x_xti.c>
+File 3,1,<..\..\..\..\FWLib\str71x\src\71x_apb.c><71x_apb.c>
+File 3,1,<..\..\..\..\FWLib\str71x\src\71x_eic.c><71x_eic.c>
+File 3,1,<..\..\..\..\FWLib\str71x\src\71x_gpio.c><71x_gpio.c>
+File 3,1,<..\..\..\..\FWLib\str71x\src\71x_lib.c><71x_lib.c>
+File 3,1,<..\..\..\..\FWLib\str71x\src\71x_pcu.c><71x_pcu.c>
+File 3,1,<..\..\..\..\FWLib\str71x\src\71x_rccu.c><71x_rccu.c>
+File 4,1,<..\..\..\..\USBLib\src\usb_core.c><usb_core.c>
+File 4,1,<..\..\..\..\USBLib\src\usb_init.c><usb_init.c>
+File 4,1,<..\..\..\..\USBLib\src\usb_int.c><usb_int.c>
+File 4,1,<..\..\..\..\USBLib\src\usb_mem.c><usb_mem.c>
+File 4,1,<..\..\..\..\USBLib\src\usb_regs.c><usb_regs.c>
+
+
+Options 1,0,0  // Target 'JoystickMouse'
+ Device (STR710FZ2)
+ Vendor (STMicroelectronics)
+ Cpu (IROM (0x40000000-0x4003FFFF) IROM2(0x400C0000-0x400C3FFF) IRAM(0x20000000-0x2000FFFF) CLOCK(16000000) CPUTYPE(ARM7TDMI))
+ FlashUt ()
+ StupF ("STARTUP\ST\STR71x.s" ("STR71x Startup Code"))
+ FlashDR (UL2ARM(-U268772636 -O15 -C0 -FD20000000 -FC800 -FN2 -FF0STR71X_B0 -FS040000000 -FL040000 -FF1STR71X_B1 -FS1400C0000 -FL14000))
+ DevID (3805)
+ Rgf (71x_lib.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ DBC_IFX ()
+ DBC_CMS ()
+ DBC_AMS ()
+ DBC_LMS ()
+ UseEnv=0
+ EnvBin ()
+ EnvInc ()
+ EnvLib ()
+ EnvReg (ÿST\71x\)
+ OrgReg (ÿST\71x\)
+ TgStat=16
+ OutDir (.\Obj\)
+ OutName (JoystickMouse)
+ GenApp=1
+ GenLib=0
+ GenHex=0
+ Debug=1
+ Browse=1
+ LstDir (.\List\)
+ HexSel=1
+ MG32K=0
+ TGMORE=0
+ RunUsr 0 0 <>
+ RunUsr 1 0 <>
+ BrunUsr 0 0 <>
+ BrunUsr 1 0 <>
+ CrunUsr 0 0 <>
+ CrunUsr 1 0 <>
+ SVCSID <>
+ GLFLAGS=1790
+ ADSFLGA { 243,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ACPUTYP (ARM7TDMI)
+ RVDEV ()
+ ADSTFLGA { 0,12,32,18,99,0,0,66,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCMADSOCM { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCMADSIRAM { 0,0,0,0,32,0,0,1,0 }
+ OCMADSIROM { 1,0,0,0,64,0,0,4,0 }
+ OCMADSXRAM { 0,0,0,0,0,0,0,0,0 }
+ OCR_RVCT { 1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,64,0,0,4,0,1,0,0,12,64,0,64,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,32,0,0,1,0,0,0,0,0,0,0,0,0,0 }
+ RV_STAVEC ()
+ ADSCCFLG { 17,32,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ADSCMISC ()
+ ADSCDEFN ()
+ ADSCUDEF ()
+ ADSCINCD (..\..\include;..\..\..\..\FWLib\str71x\inc;..\..\..\..\USBLib\inc)
+ ADSASFLG { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ADSAMISC ()
+ ADSADEFN ()
+ ADSAUDEF ()
+ ADSAINCD ()
+ PropFld { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ ADSLDFG { 16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ADSLDTA (0x40000000)
+ ADSLDDA (0x20000000)
+ ADSLDSC ()
+ ADSLDIB ()
+ ADSLDIC ()
+ ADSLDMC (--first Vectors)
+ ADSLDIF ()
+ ADSLDDW ()
+  OPTDL (SARM.DLL)(-cSTR71x)(DARMST.DLL)(-pSTR710)(SARM.DLL)(-cSTR71x)(TARMST.DLL)(-pSTR710)
+  OPTDBG 49150,0,()()()()()()()()()() (BIN\UL2ARM.DLL)()()()
+ FLASH1 { 9,0,0,0,1,0,0,0,0,16,0,0,0,0,0,0,0,0,0,0 }
+ FLASH2 (BIN\UL2ARM.DLL)
+ FLASH3 ("" ())
+ FLASH4 ()
+EndOpt
+

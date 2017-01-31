@@ -1,0 +1,4 @@
+
+<Project Header="Project 'STR Audio Speaker'" Path=".\STR Audio Speaker.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="STR Audio Speaker" >
+	<ApplicationBuild Header="STR Audio Speaker" Extern=".\STR Audio Speaker.rapp" Path=".\STR Audio Speaker.rapp" OutputFile=".\obj\STR Audio Speaker.elf" sate="96" />
+</Project>

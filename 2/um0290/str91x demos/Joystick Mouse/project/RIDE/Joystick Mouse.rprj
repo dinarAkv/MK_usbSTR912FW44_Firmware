@@ -1,0 +1,4 @@
+
+<Project Header="Project 'Joystick Mouse'" Path=".\Joystick Mouse.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="Joystick Mouse" >
+	<ApplicationBuild Header="Joystick Mouse" Extern=".\Joystick Mouse.rapp" Path=".\Joystick Mouse.rapp" OutputFile=".\obj\Joystick Mouse.elf" sate="96" ></ApplicationBuild>
+</Project>

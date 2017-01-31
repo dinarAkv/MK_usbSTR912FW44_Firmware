@@ -1,0 +1,4 @@
+
+<Project Header="Project 'Audio speaker (DMA Unlinked Mode)'" Path=".\Audio speaker (DMA Unlinked Mode).rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="Audio speaker (DMA Unlinked Mode)" >
+	<ApplicationBuild Header="Audio speaker (DMA Unlinked Mode)" Extern=".\Audio speaker (DMA Unlinked Mode).rapp" Path=".\Audio speaker (DMA Unlinked Mode).rapp" OutputFile=".\obj\Audio speaker (DMA Unlinked Mode).elf" sate="96" ></ApplicationBuild>
+</Project>

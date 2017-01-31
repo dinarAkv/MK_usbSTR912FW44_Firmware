@@ -1,0 +1,124 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+Target (VirtualComPort), 0x0004 // Tools: 'ARM-ADS'
+
+Group (Application files)
+Group (RVMDK)
+Group (FWLib)
+Group (USBLib)
+
+File 1,1,<..\..\source\75x_it.c><75x_it.c>
+File 1,1,<..\..\source\hw_config.c><hw_config.c>
+File 1,1,<..\..\source\main.c><main.c>
+File 1,1,<..\..\source\usb_desc.c><usb_desc.c>
+File 1,1,<..\..\source\usb_endp.c><usb_endp.c>
+File 1,1,<..\..\source\usb_istr.c><usb_istr.c>
+File 1,1,<..\..\source\usb_prop.c><usb_prop.c>
+File 1,1,<..\..\source\usb_pwr.c><usb_pwr.c>
+File 2,2,<.\75x_vect.s><75x_vect.s>
+File 2,2,<.\75x_init.s><75x_init.s>
+File 3,1,<..\..\..\..\FWLib\str75x\src\75x_uart.c><75x_uart.c>
+File 3,1,<..\..\..\..\FWLib\str75x\src\75x_cfg.c><75x_cfg.c>
+File 3,1,<..\..\..\..\FWLib\str75x\src\75x_eic.c><75x_eic.c>
+File 3,1,<..\..\..\..\FWLib\str75x\src\75x_gpio.c><75x_gpio.c>
+File 3,1,<..\..\..\..\FWLib\str75x\src\75x_lib.c><75x_lib.c>
+File 3,1,<..\..\..\..\FWLib\str75x\src\75x_mrcc.c><75x_mrcc.c>
+File 3,1,<..\..\..\..\FWLib\str75x\src\75x_extit.c><75x_extit.c>
+File 4,1,<..\..\..\..\USBLib\src\usb_core.c><usb_core.c>
+File 4,1,<..\..\..\..\USBLib\src\usb_init.c><usb_init.c>
+File 4,1,<..\..\..\..\USBLib\src\usb_int.c><usb_int.c>
+File 4,1,<..\..\..\..\USBLib\src\usb_mem.c><usb_mem.c>
+File 4,1,<..\..\..\..\USBLib\src\usb_regs.c><usb_regs.c>
+
+
+Options 1,0,0  // Target 'VirtualComPort'
+ Device (STR750FL2)
+ Vendor (STMicroelectronics)
+ Cpu (IROM (0x20000000-0x2003FFFF) IROM2(0x200C0000-0x200C3FFF) IRAM(0x40000000-0x40003FFF) CLOCK(4000000) CPUTYPE(ARM7TDMI))
+ FlashUt ()
+ StupF ("STARTUP\ST\STR75x.s" ("STR75x Startup Code"))
+ FlashDR (UL2ARM(-UU0639C7E -O15 -S1 -C0 -N00("ARM7TDMI-S Core") -D00(4F1F0041) -L00(4) -FO7 -FD40000000 -FC800 -FN2 -FF0STR75X_B0 -FS020000000 -FL040000 -FF1STR75X_B1 -FS1200C0000 -FL14000))
+ DevID (4132)
+ Rgf (75x_lib.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ DBC_IFX ()
+ DBC_CMS ()
+ DBC_AMS ()
+ DBC_LMS ()
+ UseEnv=0
+ EnvBin ()
+ EnvInc ()
+ EnvLib ()
+ EnvReg (ÿST\75x\)
+ OrgReg (ÿST\75x\)
+ TgStat=16
+ OutDir (.\Obj\)
+ OutName (VirtualComPort)
+ GenApp=1
+ GenLib=0
+ GenHex=0
+ Debug=1
+ Browse=1
+ LstDir (.\List\)
+ HexSel=1
+ MG32K=0
+ TGMORE=0
+ RunUsr 0 0 <>
+ RunUsr 1 0 <>
+ BrunUsr 0 0 <>
+ BrunUsr 1 0 <>
+ CrunUsr 0 0 <>
+ CrunUsr 1 0 <>
+ SVCSID <>
+ GLFLAGS=1790
+ ADSFLGA { 243,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ACPUTYP (ARM7TDMI)
+ RVDEV ()
+ ADSTFLGA { 0,12,32,18,99,0,0,66,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCMADSOCM { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCMADSIRAM { 0,0,0,0,64,0,64,0,0 }
+ OCMADSIROM { 1,0,0,0,32,0,0,4,0 }
+ OCMADSXRAM { 0,0,0,0,0,0,0,0,0 }
+ OCR_RVCT { 1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,32,0,0,4,0,1,0,0,12,32,0,64,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,64,0,64,0,0,0,0,0,0,0,0,0,0,0 }
+ RV_STAVEC ()
+ ADSCCFLG { 17,32,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ADSCMISC ()
+ ADSCDEFN ()
+ ADSCUDEF ()
+ ADSCINCD (..\..\include;..\..\..\..\USBLib\inc;..\..\..\..\FWLib\str75x\inc)
+ ADSASFLG { 1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ADSAMISC ()
+ ADSADEFN ()
+ ADSAUDEF ()
+ ADSAINCD ()
+ PropFld { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ ADSLDFG { 16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ADSLDTA (0x20000000)
+ ADSLDDA (0x40000000)
+ ADSLDSC ()
+ ADSLDIB ()
+ ADSLDIC ()
+ ADSLDMC (--first Vectors)
+ ADSLDIF ()
+ ADSLDDW ()
+  OPTDL (SARM.DLL)(-cSTR75x)(DARMST.DLL)(-pSTR750)(SARM.DLL)(-cSTR75x)(TARMST.DLL)(-pSTR750)
+  OPTDBG 49150,0,()()()()()()()()()() (BIN\UL2ARM.DLL)()()()
+ FLASH1 { 9,0,0,0,1,0,0,0,0,16,0,0,0,0,0,0,0,0,0,0 }
+ FLASH2 (BIN\UL2ARM.DLL)
+ FLASH3 ("" ())
+ FLASH4 ()
+EndOpt
+

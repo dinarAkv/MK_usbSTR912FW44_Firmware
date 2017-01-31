@@ -1,0 +1,12 @@
+// reset ARM processor
+RESET TARGET 
+WAIT
+// set program counter to program entry
+
+REGISTER cpsr = 0x000000D3 
+REGISTER pc=0x40004000
+
+// Go until main
+//Go UNTIL main
+WAIT
+

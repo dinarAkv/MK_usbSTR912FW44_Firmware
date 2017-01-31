@@ -1,0 +1,123 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+Target (Project_Flash), 0x0004 // Tools: 'ARM-ADS'
+
+Group (Startup)
+Group (Library)
+Group (User)
+
+File 1,2,<.\91x_vect.s><91x_vect.s>
+File 1,2,<.\91x_init.s><91x_init.s>
+File 2,1,<..\..\library\src\91x_adc.c><91x_adc.c>
+File 2,1,<..\..\library\src\91x_ahbapb.c><91x_ahbapb.c>
+File 2,1,<..\..\library\src\91x_can.c><91x_can.c>
+File 2,1,<..\..\library\src\91x_dma.c><91x_dma.c>
+File 2,1,<..\..\library\src\91x_emi.c><91x_emi.c>
+File 2,1,<..\..\library\src\91x_fmi.c><91x_fmi.c>
+File 2,1,<..\..\library\src\91x_gpio.c><91x_gpio.c>
+File 2,1,<..\..\library\src\91x_i2c.c><91x_i2c.c>
+File 2,1,<..\..\library\src\91x_lib.c><91x_lib.c>
+File 2,1,<..\..\library\src\91x_mc.c><91x_mc.c>
+File 2,1,<..\..\library\src\91x_rtc.c><91x_rtc.c>
+File 2,1,<..\..\library\src\91x_scu.c><91x_scu.c>
+File 2,1,<..\..\library\src\91x_ssp.c><91x_ssp.c>
+File 2,1,<..\..\library\src\91x_tim.c><91x_tim.c>
+File 2,1,<..\..\library\src\91x_uart.c><91x_uart.c>
+File 2,1,<..\..\library\src\91x_vic.c><91x_vic.c>
+File 2,1,<..\..\library\src\91x_wdg.c><91x_wdg.c>
+File 2,1,<..\..\library\src\91x_wiu.c><91x_wiu.c>
+File 3,1,<..\main.c><main.c>
+File 3,1,<..\91x_it.c><91x_it.c>
+
+
+Options 1,0,0  // Target 'Project_Flash'
+ Device (STR912FW44)
+ Vendor (STMicroelectronics)
+ Cpu (IRAM(0x04000000-0x04017FFF) IROM(0x0-0x7FFFF) IROM2(0x400000-0x407FFF) CLOCK(25000000) CPUTYPE(ARM9E))
+ FlashUt ()
+ StupF ("STARTUP\ST\STR91x.s" ("STR91x Startup Code"))
+ FlashDR (UL2ARM(-UU0639C7E -O15 -S0 -C1 -N00("ST uPSD Flash") -D00(04570041) -L00(8) -N01("ARM966E-S Core") -D01(25966041) -L01(4) -N02("ST Boundary Scan") -D02(0457F041) -L02(5) -FO15 -FD4000000 -FC800 -FN2 -FF0STR91xFxx4 -FS00 -FL080000 -FF1STR91xB1 -FS1400000 -FL18000))
+ DevID (4067)
+ Rgf (91x_lib.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ DBC_IFX ()
+ DBC_CMS ()
+ DBC_AMS ()
+ DBC_LMS ()
+ UseEnv=0
+ EnvBin ()
+ EnvInc ()
+ EnvLib ()
+ EnvReg (ÿST\91x\)
+ OrgReg (ÿST\91x\)
+ TgStat=16
+ OutDir (.\Output\)
+ OutName (project_Flash)
+ GenApp=1
+ GenLib=0
+ GenHex=0
+ Debug=1
+ Browse=1
+ LstDir (.\Listing\)
+ HexSel=1
+ MG32K=0
+ TGMORE=0
+ RunUsr 0 0 <>
+ RunUsr 1 0 <>
+ BrunUsr 0 0 <>
+ BrunUsr 1 0 <>
+ CrunUsr 0 0 <>
+ CrunUsr 1 0 <>
+ SVCSID <>
+ GLFLAGS=1790
+ ADSFLGA { 243,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ACPUTYP (ARM9E)
+ RVDEV ()
+ ADSTFLGA { 0,12,32,18,99,0,0,66,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCMADSOCM { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCMADSIRAM { 0,0,0,0,4,0,128,1,0 }
+ OCMADSIROM { 1,0,0,0,0,0,0,8,0 }
+ OCMADSXRAM { 0,0,0,0,0,0,0,0,0 }
+ OCR_RVCT { 1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,8,0,1,0,0,8,0,0,128,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,128,1,0,0,0,0,0,0,0,0,0,0 }
+ RV_STAVEC ()
+ ADSCCFLG { 17,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ADSCMISC ()
+ ADSCDEFN ()
+ ADSCUDEF ()
+ ADSCINCD (..\..\library\inc;..\..\project)
+ ADSASFLG { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ADSAMISC ()
+ ADSADEFN ()
+ ADSAUDEF ()
+ ADSAINCD ()
+ PropFld { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ ADSLDFG { 17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ADSLDTA (0x00000000)
+ ADSLDDA (0x04000000)
+ ADSLDSC (.\Output\project_Flash.sct)
+ ADSLDIB ()
+ ADSLDIC ()
+ ADSLDMC (--entry Reset_Handler)
+ ADSLDIF ()
+ ADSLDDW ()
+  OPTDL (SARM.DLL)(-cSTR91x)(DARMST9.DLL)(-pSTR912)(SARM.DLL)(-cSTR91x)(TARMST9.DLL)(-pSTR912)
+  OPTDBG 49150,0,()()()()()()()()()() (BIN\UL2ARM.DLL)()()()
+ FLASH1 { 9,0,0,0,1,0,0,0,0,16,0,0,0,0,0,0,0,0,0,0 }
+ FLASH2 (BIN\UL2ARM.DLL)
+ FLASH3 ("" ())
+ FLASH4 ()
+EndOpt
+

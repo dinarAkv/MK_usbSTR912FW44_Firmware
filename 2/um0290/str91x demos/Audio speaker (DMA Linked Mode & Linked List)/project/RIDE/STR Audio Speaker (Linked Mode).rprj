@@ -1,0 +1,4 @@
+
+<Project Header="Project 'STR Audio Speaker (Linked Mode)'" Path=".\STR Audio Speaker (Linked Mode).rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="STR Audio Speaker (Linked Mode)" >
+	<ApplicationBuild Header="STR Audio Speaker (Linked Mode)" Extern=".\STR Audio Speaker (Linked Mode).rapp" Path=".\STR Audio Speaker (Linked Mode).rapp" OutputFile=".\obj\STR Audio Speaker (Linked Mode).elf" sate="96" ></ApplicationBuild>
+</Project>

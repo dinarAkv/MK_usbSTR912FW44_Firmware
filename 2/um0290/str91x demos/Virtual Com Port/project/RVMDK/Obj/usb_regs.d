@@ -1,0 +1,10 @@
+.\Obj\usb_regs.o: ..\..\..\..\USBLib\src\usb_regs.c
+.\Obj\usb_regs.o: ..\..\..\..\USBLib\inc\usb_lib.h
+.\Obj\usb_regs.o: ..\..\..\..\USBLib\inc\usb_type.h
+.\Obj\usb_regs.o: ..\..\include\usb_conf.h
+.\Obj\usb_regs.o: ..\..\..\..\USBLib\inc\usb_regs.h
+.\Obj\usb_regs.o: ..\..\..\..\USBLib\inc\usb_def.h
+.\Obj\usb_regs.o: ..\..\..\..\USBLib\inc\usb_core.h
+.\Obj\usb_regs.o: ..\..\..\..\USBLib\inc\usb_init.h
+.\Obj\usb_regs.o: ..\..\..\..\USBLib\inc\usb_mem.h
+.\Obj\usb_regs.o: ..\..\..\..\USBLib\inc\usb_int.h

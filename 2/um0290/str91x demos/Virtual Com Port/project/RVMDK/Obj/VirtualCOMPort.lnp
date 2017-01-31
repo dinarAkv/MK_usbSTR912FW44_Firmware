@@ -1,0 +1,3 @@
+".\obj\91x_it.o" ".\obj\hw_config.o" ".\obj\main.o" ".\obj\usb_desc.o" ".\obj\usb_endp.o" ".\obj\usb_istr.o" ".\obj\usb_prop.o" ".\obj\usb_pwr.o" ".\obj\usb_user.o" ".\obj\91x_vect.o" ".\obj\91x_init.o" ".\obj\91x_vic.o" ".\obj\91x_ahbapb.o" ".\obj\91x_fmi.o" ".\obj\91x_gpio.o" ".\obj\91x_lib.o" ".\obj\91x_scu.o" ".\obj\91x_uart.o" ".\obj\usb_core.o" ".\obj\usb_init.o" ".\obj\usb_int.o" ".\obj\usb_mem.o" ".\obj\usb_regs.o" --library_type=microlib --device DARMST9 --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x04000000 --strict --first Vectors --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\List\VirtualCOMPort.map" -o ".\Obj\VirtualCOMPort.axf"

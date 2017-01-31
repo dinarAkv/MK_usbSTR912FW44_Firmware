@@ -1,0 +1,391 @@
+/******************** (C) COPYRIGHT 2008 STMicroelectronics ********************
+* File Name          : version.txt
+* Author             : MCD Application Team
+* Version            : V2.1
+* Date               : 12/22/2008
+* Description        : Version file for STR91xFA Firmware Library.
+********************************************************************************
+* THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+* WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+* AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+* INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+* CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+* INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+*******************************************************************************/
+
+* V2.1 - 12/22/2008 :  
+===================
+
+Start-Up Files Update
+---------------------
+None.
+
+
+
+Library update:
+---------------
+
+EMI:
+      - Initialize the EMI_BurstModeWrite_TransferLength entry in the 
+       "EMI_StructInit"function.
+
+
+MAP:
+     - Change "Peripheral Clock Gating Register 0" register naming from PCGRO 
+       to PCGR0.
+    
+SCU:
+     -Change "PCGRO" register naming to "PCGR0" in "SCU_AHBPeriphClockConfig()"
+     function.
+     -Add parenthesis to the lock PLL loop in "SCU_PLLCmd()" function to avoid
+      any problem with different compilers.
+     -Remove delay before PLL disabling  in "SCU_PLLCmd()" function to increase
+      response time.
+
+WDG:
+     -Remove "WDG_DeInit()" function since it has not any meaning after bit 12
+      of "SCU_PRR1" register become Reserved, and must be kept at reset value 0.
+
+VIC:
+     -Change "VIC_GetISRVectAdd()" function which should returns the 
+      “VICx->VAiR[VIC_Priority]” not the “VICx->VAiR[VIC_Source].
+
+WIU:
+     -Change "WIU_Cmd" function to correct the disable of the Wake-up Unit.
+
+Examples update:
+----------------
+
+WDG:
+    - Remove "WDG_DeInit()" function since it has not any meaning after bit 12
+      of "SCU_PRR1" register become Reserved, and must be kept at reset value 0.
+
+
+
+* V2.0 - 12/07/2007 :  
+===================
+
+    + Includes Support of STR91xFA revG, revH and revA production series devices.
+    + Firmware drivers template updated.
+    + Add RVMDK, EWARMv5, RIDE and RIDE7 template project toolchain.
+    + Remove of RVDK template project toolchain.
+
+Start-Up Files Update
+---------------------
+
+91x_init.s:
+
+     - Add Support of Flash banks Mapping for all flash sales types
+     - Add a Delay Define at Start-up to prevent in some cases JTAG Debuggers failure.
+     - Enhance File formattig for better understanding of Assembler routines.
+
+91x_vect.s:
+
+     - Remove of Nesting Interrupts handling to increase response time.
+     - For Advanced Nesting Interrupts techniques Refer to AN2593 on www.st.com/mcu
+
+Library update:
+---------------
+
+ADC:
+
+     - Add function "ADC_ExternalTrigConfig"     : configures the ADC external trigger
+     - Add function "ADC_ExternalTrigCmd"        : Enables or Disables the external trigger
+     - Add function "ADC_DMACmd"                 : Enables or Disable ADC DMA feature  
+     - Add function "ADC_AutomaticClockGatedCmd" : Enables or Disables the automtic clock gated mode
+
+EMI:
+  
+     - Add function "EMI_BCLKCmd"   : Enables the BCLK clock output for PSRAM mode
+     - Modify functions "EMI_StructInit" and "EMI_Init" for PSRAM mode support
+
+
+FMI:
+     - Add function "FMI_ReadRSIGData" : Reads Electronic Signature word
+     - "Remap_Bank_1" define removed from 91x_fmi.h and replaced by Boot_Bank_0 or Boot_Bank_1 defines 
+        in file 91x_conf.h
+     - Add support for 2 MByte Flash
+
+SCU:
+
+    - Add function "SCU_EMIByte_Select_Pinconfig" : Enables Enables UB, LB signals (only for BGA package)
+    - Add function "SCU_EMIclock_Pinconfig" Enable BCLK output pin(only for BGA package)
+    - Add function "SCU_TIMExtCLKCmd" : Enables or Disables TIM external clock
+    - remove functions: "SCU_TIMCLKSourceConfig" and "SCU_TIMPresConfig" (see STR91xF errata sheet section 2.32)
+
+
+TIM:
+    
+    - remove "TIM_CLK_SCU" define
+
+WDG:
+    
+    - Add function "WDG_Reload" : reloads watchdog counter
+    - Add function "WDG_TimerModeCmd" :  Enables  or Disables Timer mode
+    - Add function "WDG_StartWatchdogMode" : Starts Watchdog mode
+    - Changes in functions "WDG_StructInit" and "WDG_Init"
+    
+MC:
+
+    - Add function "MC_Lock"                      : Enables or disables the lock of a set of control register bits
+    - Add function "MC_CounterModeBits"           : Enables or disables the 10 bits mode for the dead time counter
+				                                            and enables or disables the 16 bits mode for the PWM counter.
+    - Add function "MC_DoubleUpdateModeCmd"       : Enables the Double Update Mode for the MC 
+    - Add function "MC_ADC_Trigger"               : Enables or disables the Triggers to the ADC conversion 
+    - Add function "MC_EnhancedStop"		          : Enables or disables an Enhanced Motor Stop feature
+    - Add function "MC_EmergencyStopPolarity"     : Enables or disables an Enhanced Motor Stop feature in debug mode
+    - Add function "MC_DebugOutputProtection"     : Allows the output phases to follow the polarity set by PSR if 
+      	  				                                  enabled or they remain in their last known state if disabled.
+    - Modifications in MC_EmergencyClear function : adding the automatically clear of the emergency stop feature. 
+    - Modifications in MC_StructInit function     : adding condition if PWM counter is 10 or 16 bits.
+
+DMA:
+    
+    - Add stucture types "LLI_CCR_InitTypeDef" and "LLI_InitTypeDef" for DMA linked list management
+    - Add function DMA_LLI_CCR_Init: Return linked list's control word  according to the specified 
+       parameters in structure of type LLI_CCR_InitTypeDef.
+
+
+CAN:
+
+   - Update function CAN_SetTxMsgObj: Remote functionality added to the parameters, masks updated,
+   - Update function CAN_SetRxMsgObj: Masks updated for the standard ID configuration,
+   - Update function CAN_SendMessage: changed to use two new functions CAN_UpdateMsgObj and CAN_TransmitRequest
+   - Update function CAN_BasicSendMessage: configuration for extended ID corrected, transmit request corrected
+   - Update function CAN_ReceiveMessage: Extended ID corrected
+   - Update function CAN_BasicReceive: Extended ID corrected
+   - Update function CAN_WaitEndOfTx: while loop added
+   - Update function CAN_InvalidateAllMsgObj renamed CAN_SetUnusedAllMsgObj
+   - Update function CAN_IsMessageWaiting renamed CAN_GetMsgReceiveStatus
+   - Update function CAN_IsTransmitRequested renamed CAN_GetMsgTransmitRequestStatus
+   - Update function CAN_IsObjectValid renamed CAN_GetMsgValidStatus
+   - Update function CAN_IsInterruptPending renamed CAN_GetMsgInterruptStatus
+
+
+   - Add function CAN_UpdateMsgObj             : Updates the CAN message object with the pCanMsg fields, it 
+                                                 does not start the transmission of the CAN message object
+   - Add function CAN_TransmitRequest          : This function requests the transmission of a message object 
+   - Add function CAN_GetFlagStatus            : Returns the flasg status of the flag passed in parameter 
+   - Add function CAN_GetTransmitErrorCounter  : Reads the CAN cell transmit error counter 
+   - Add function CAN_GetReceiveErrorCounter   : Reads the CAN cell receive error counter  
+
+
+
+GPIO:
+   
+   - Change "GPIO_IPConnected" to "GPIO_IPInputConnected" in structure GPIO_InitTypeDef
+
+
+91x_it.c/.h :  
+    
+    - add of while(1) is Fault/abort Exceptions to avoid Program Counter Lost.
+    - add VICs Default vector address handler(needed in spurious interrupt cases)
+    - Add of  "VIC0->VAR = 0xFF;" at the end of IT  for VIC0 IRQs Lines
+    - Remove of Nesting Interrupts handling to increase response time.
+    - For Advanced Nesting Interrupts techniques Refer to AN2593 on www.st.com/mcu
+ 
+Examples update:
+----------------
+
+
+General :  Most of Examples are running at Full STR91xFA Speed, CPU @96MHz.
+      
+ADC: 
+    
+    - modifications in Example1 (ADC conversions sent by UART to Hyperterminal)
+    - Add Example2: ADC triggered conversion with DMA transfer
+
+CAN:
+    
+    - modifications in example
+
+DMA: 
+    
+    - modifications in example to support new library DMA functions
+
+EMI:
+    
+    - ADD 2 new examples for EMI configuration
+
+FMI:
+    
+    - modifications in example
+
+RTC:
+    
+    - modification in Example1 (Alarm interrupt generation)
+    - add Example2: RTC periodic interrupt generation
+
+SSP:
+    
+    - add Example2: Communication with an external SPI Flash
+
+TIM:
+    
+   - modifications in Example1 (GPIO change)
+   - add Example2: Output compare interrupt generation
+
+UART:
+    
+   - change in Example: interrupt generation for receive
+
+WDG:
+ 
+   - modification in Example1 and Example2 (see readme.txt of examples for details)  
+
+WIU
+   - modification in example: generation of FIQ interrupt instead of IRQ 
+    
+     
+
+
+
+*  05/22/2007 : Version 1.2
+================================
+
+
+Examples update:
+---------------
+
+CAN:  
+      
+      -variable "u32 j" used in delay() function changed to volatile "vu32 j"
+
+SSP:
+
+
+     - GPIO3 configuration was changed, "GPIO_InitStructure.GPIO_IPConnected = 
+       GPIO_IPConnected_Disable;" instead of " GPIO_InitStructure.GPIO_IPConnected =
+       GPIO_IPConnected_Enable;"
+
+     - The Readme.txt file was changed accordingly.
+
+TIM:
+
+example 1:
+     
+     - GPIO4 & GPIO5 configuration was changed.
+
+
+DMA:
+
+
+      - Updating the "Readme.txt" file.
+
+
+MC:
+
+
+      - remove the VIC configuration from the main.c " not used" and update the 
+        91x_conf.h" and "Readme.txt" fileS accordingly
+
+WIU:
+
+
+      - Use the WUI_Cmd() function, remove software interrupt generation on the example and
+        update the"Readme.txt" file accordingly.
+
+
+I2C:
+
+example 1:
+        -Removed  : (will be available in the next library release). 
+       
+example 2:(the delivred example)
+       - Using GPIO2 instead of GPIO0, the Readme.txt file was changed accordingly.
+       - Example corrected according to driver update.   
+
+          
+-comment  #define DEBUG in "91x_conf.h" for each example.( no debug mode used by default ).
+-Add SCU_MCLKSourceConfig(SCU_MCLK_OSC) function in main() function to run example @Osc frequency.
+-Add SCU_PCLKDivisorConfig(SCU_PCLK_Div1) in main() function to keep APB clock as RCLK clock.
+
+
+Library update:
+---------------
+
+src :
+   - 91x_uart.c ,error correction: "UARTx->ICR = UART_IT" instead of "UARTx->ICR &= UART_IT"
+
+
+   - 91x_gpio.c ,- error correction: "SCU->GPIOTYPE[0x07] = 0x0000" instead of "SCU->GPIOOUT[0x07]  = 0xAAAA;"
+                 - Updating GPIO_ANAPinConfig() function
+                
+   - 91x_gpio.c ,-Testing GPIO number on GPIO_Init () function since GPIO8/ GPIO9 don’t have an alternate function.
+
+   - 91x_scu.c ,- error correction: updating SCU_BRCLKDivisorConfig(u32 BRCLK_Divisor) function.
+                - updating SCU_UARTIrDAConfig() function.
+                - The "91x_scu.h" was updated accordingly.
+
+    - 91x_tim.c ,-error correction:  Remove the “if statement” and the decrement by four in case of TIM_PWM,
+                                      when setting the Duty Cycle value and the Full Period value.
+
+
+   - 91x_rtc.c ,error correction: "Time->milliseconds = BCD3ToWORD(Time->milliseconds)" instead of  
+
+     "Time->seconds = BCD3ToWORD(Time->milliseconds)"
+
+
+   - 91x_ssp.c ,error correction: name of SSP_LoopBackMode() function changed to SSP_LoopBackConfig().
+
+
+   - 91x_ahbapb.c, updating the function AHBAPB_ClearFlag().
+
+   - 91x_wiu.C: Add WUI_Cmd() function ( the wake-up enable used to be performed on WIU_Init before).
+
+   - 91x_I2C.C: Correct I2C_GetLastEvent() function we should read I2Cx->SR1 before I2Cx->SR2.
+   
+  
+
+
+inc :
+    - 91x_dma.h: -"DMA_DES_TIM1" changed to "DMA_DES_TIM0" and  "DMA_DES_TIM2" changed to "DMA_DES_TIM1"
+                 -"DMA_SRC_TIM1" changed to "DMA_SRC_TIM0" and  "DMA_SRC_TIM2" changed to" DMA_SRC_TIM1" 
+ 
+    - 91x_mc.h:  Adding prototypes for functions "MC_ClearPWMCounter()" and "MC_ClearTachoCounter()"
+
+    - 91x_map.h: Add conditional declaration for pointers on peripherals.
+
+   - 91x_wiu.h:  Remove the wake-up modes ( to be inline with the new update for STR91X RM).
+  
+   - 91x_I2C.h:  Update defined values.
+
+  
+
+
+Project update:
+---------------
+
+- Add templates project for EWARM,RVDK,RIDE and RVMDK tools chain.
+- Updating the startup file "91x_init.s" for EWARM,RVDK,RIDE and RVMDK tools chain.
+as the following :
+   +Remove BUFFERED Mode conditional compilation:BUFFERED Mode enabled by default.  
+   +Ability to select the clock source frequency using conditional compilation (PLL @96Mhz by default)
+   +Add STR91xF's SCU specific definitions
+   +STR9X1xF's FMI specific definitions
+   +PFQ enabled by default
+   +Clock dividers selection:
+     PCLK =RCLK/2,
+     FMICLK=RCLK,
+   +DTCM & AHB wait states disabled.
+
+- Updating the "Readme.txt" files  for EWARM,RVDK,RIDE and RVMDK tools chain.
+
+
+
+*  05/24/2006 : Version 1.1
+================================
+
+-CHANGING THE PATH OF THIS FILE.
+-Updating 91x_lib.c : to be inline with the Ethernet lib.
+-Updating 91x_map.h : to be inline with the Ethernet lib .
+
+
+*  05/18/2006 : Version 1.0
+================================
+
+  Created.
+
+
+
+********************(C) COPYRIGHT 2008 STMicroelectronics**********************

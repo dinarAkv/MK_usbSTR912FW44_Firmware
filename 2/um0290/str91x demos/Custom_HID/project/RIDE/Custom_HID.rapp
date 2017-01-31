@@ -1,0 +1,91 @@
+
+<ApplicationBuild Header="Custom_HID" Extern=".\Custom_HID.rapp" Path=".\Custom_HID.rapp" OutputFile=".\obj\Custom_HID.elf" sate="96" >
+	<Group Header="Application files" Marker="-1" OutputFile="" sate="0" >
+		<NodeC Path="..\..\source\91x_it.c" Header="91x_it.c" Marker="-1" OutputFile=".\obj\91x_it.o" sate="0" />
+		<NodeC Path="..\..\source\hw_config.c" Header="hw_config.c" Marker="-1" OutputFile=".\obj\hw_config.o" sate="0" />
+		<NodeC Path="..\..\source\main.c" Header="main.c" Marker="-1" OutputFile=".\obj\main.o" sate="0" />
+		<NodeC Path="..\..\source\usb_desc.c" Header="usb_desc.c" Marker="-1" OutputFile=".\obj\usb_desc.o" sate="0" />
+		<NodeC Path="..\..\source\usb_endp.c" Header="usb_endp.c" Marker="-1" OutputFile=".\obj\usb_endp.o" sate="0" />
+		<NodeC Path="..\..\source\usb_istr.c" Header="usb_istr.c" Marker="-1" OutputFile=".\obj\usb_istr.o" sate="0" />
+		<NodeC Path="..\..\source\usb_prop.c" Header="usb_prop.c" Marker="-1" OutputFile=".\obj\usb_prop.o" sate="0" />
+		<NodeC Path="..\..\source\usb_pwr.c" Header="usb_pwr.c" Marker="-1" OutputFile=".\obj\usb_pwr.o" sate="0" />
+												
+	</Group>
+	<Group Header="RIDE" Marker="-1" OutputFile="" sate="96" >
+		<NodeASM Path=".\91x_init.s" Header="91x_init.s" Marker="-1" OutputFile=".\obj\91x_init.o" sate="0" />
+												
+	</Group>
+	<Group Header="FWLib" Marker="-1" OutputFile="" sate="98" >
+		<NodeC Path="..\..\..\..\FWLib\str91x\src\91x_vic.c" Header="91x_vic.c" Marker="-1" OutputFile=".\obj\91x_vic.o" sate="0" />
+		<NodeC Path="..\..\..\..\FWLib\str91x\src\91x_ahbapb.c" Header="91x_ahbapb.c" Marker="-1" OutputFile=".\obj\91x_ahbapb.o" sate="0" />
+		<NodeC Path="..\..\..\..\FWLib\str91x\src\91x_fmi.c" Header="91x_fmi.c" Marker="-1" OutputFile=".\obj\91x_fmi.o" sate="0" />
+		<NodeC Path="..\..\..\..\FWLib\str91x\src\91x_gpio.c" Header="91x_gpio.c" Marker="-1" OutputFile=".\obj\91x_gpio.o" sate="0" />
+		<NodeC Path="..\..\..\..\FWLib\str91x\src\91x_lib.c" Header="91x_lib.c" Marker="-1" OutputFile=".\obj\91x_lib.o" sate="0" />
+		<NodeC Path="..\..\..\..\FWLib\str91x\src\91x_scu.c" Header="91x_scu.c" Marker="-1" OutputFile=".\obj\91x_scu.o" sate="0" />
+		<NodeC Path="..\..\..\..\FWLib\str91x\src\91x_wiu.c" Header="91x_wiu.c" Marker="-1" OutputFile=".\obj\91x_wiu.o" sate="0" />
+		<NodeC Path="..\..\..\..\FWLib\str91x\src\91x_adc.c" Header="91x_adc.c" Marker="-1" OutputFile=".\obj\91x_adc.o" sate="0" />
+												
+	</Group>
+	<Group Header="USBLib" Marker="-1" OutputFile="" sate="96" >
+		<NodeC Path="..\..\..\..\USBLib\src\usb_core.c" Header="usb_core.c" Marker="-1" OutputFile=".\obj\usb_core.o" sate="0" />
+		<NodeC Path="..\..\..\..\USBLib\src\usb_init.c" Header="usb_init.c" Marker="-1" OutputFile=".\obj\usb_init.o" sate="0" />
+		<NodeC Path="..\..\..\..\USBLib\src\usb_int.c" Header="usb_int.c" Marker="-1" OutputFile=".\obj\usb_int.o" sate="0" />
+		<NodeC Path="..\..\..\..\USBLib\src\usb_mem.c" Header="usb_mem.c" Marker="-1" OutputFile=".\obj\usb_mem.o" sate="0" />
+		<NodeC Path="..\..\..\..\USBLib\src\usb_regs.c" Header="usb_regs.c" Marker="-1" OutputFile=".\obj\usb_regs.o" sate="0" />
+												
+	</Group>
+	<Options>
+		<Config Header="Standard" >
+			<Set Header="ApplicationBuild" >
+				<Section Header="General" >
+					<Property Header="TargetFamily" Value="ARM" />
+																																											
+				</Section>
+				<Section Header="Directories" >
+					<Property Header="OutDir" Value="$(ApplicationDir)\obj" Removable="1" />
+					<Property Header="ListDir" Value="$(ApplicationDir)\lst" Removable="1" />
+					<Property Header="IncDir" Value=".\..\..\..\..\FWLib\str91x\inc;.\..\..\..\..\USBLib\inc;.\..\..\include" Removable="1" />
+																																											
+				</Section>
+																																	
+			</Set>
+			<Set Header="Target" >
+				<Section Header="ProcessorARM" >
+					<Property Header="Processor" Value="STR912FW44" />
+																																											
+				</Section>
+				<Section Header="ToolSetARM" >
+					<Property Header="BuildToolSetARM" Value="ARM\\GNU.config" Removable="1" />
+																																											
+				</Section>
+																																	
+			</Set>
+			<Set Header="GCC" >
+				<Section Header="OPTIMIZE" >
+					<Property Header="Optimize" Value="-Os" Removable="1" />
+																																											
+				</Section>
+																																	
+			</Set>
+			<Set Header="LD" >
+				<Section Header="Startup" >
+					<Property Header="DEFAULTSTARTUP" Value="No" Removable="1" />
+					<Property Header="File" Value="" Removable="1" />
+																																											
+				</Section>
+				<Section Header="Scripts" >
+					<Property Header="StarterKitLimit" Value="No" Removable="1" />
+																																											
+				</Section>
+				<Section Header="LIB" >
+					<Property Header="STLIB" Value="0" Removable="1" />
+					<Property Header="UART0PUTC" Value="0" Removable="1" />
+																																											
+				</Section>
+																																	
+			</Set>
+																				
+		</Config>
+												
+	</Options>
+</ApplicationBuild>

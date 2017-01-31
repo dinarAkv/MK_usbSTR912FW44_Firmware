@@ -1,0 +1,6 @@
+--lsl-file=.\setting\STR710.lsl
+--optimize=0
+--map-file-format=1
+-Wl--define=__NO_AUTO_VECTORS
+$(LinkObjects)
+--output=$(TargetDir)$(Target)

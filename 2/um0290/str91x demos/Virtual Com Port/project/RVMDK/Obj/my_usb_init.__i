@@ -1,0 +1,1 @@
+-c --device DARMST9 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\..\include -I..\..\..\..\FWLib\str91x\inc -I..\..\..\..\USBLib\inc -I "C:\Keil\ARM\INC\ST\91x" -o ".\Obj\my_usb_init.o" --omf_browse ".\Obj\my_usb_init.crf" --depend ".\Obj\my_usb_init.d" "myLib\my_usb_init.c"

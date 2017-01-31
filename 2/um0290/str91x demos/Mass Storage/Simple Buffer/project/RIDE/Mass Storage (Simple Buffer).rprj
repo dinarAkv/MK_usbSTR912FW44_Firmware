@@ -1,0 +1,4 @@
+
+<Project Header="Project 'Mass Storage (Simple Buffer)'" Path=".\Mass Storage (Simple Buffer).rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="Mass Storage (Simple Buffer)" >
+	<ApplicationBuild Header="Mass Storage (Simple Buffer)" Extern=".\Mass Storage (Simple Buffer).rapp" Path=".\Mass Storage (Simple Buffer).rapp" OutputFile=".\obj\Mass Storage (Simple Buffer).elf" sate="98" ></ApplicationBuild>
+</Project>
