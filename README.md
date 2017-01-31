@@ -11,8 +11,13 @@ to the host. So user get the same message.
 
 
 
+
 Firmware code wrote with help of Keil IDE. 
+
 Project for keil locates in:        '\2\um0290\str91x demos\Virtual Com Port\project\RVMDK'
+
 Library for usb locates in:         '\2\um0290\USBLib'
+
 Common library for STR9 locates in: '\2\um0290\FWLib\str91x'
+
 My own built files locate in:       '\2\um0290\str91x demos\Virtual Com Port\project\RVMDK\myLib'
